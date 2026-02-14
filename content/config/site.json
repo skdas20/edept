@@ -1,0 +1,93 @@
+{
+  "siteName": "EEE Department - IEM",
+  "department": "Electronics & Communication Engineering",
+  "institution": "Institute of Engineering & Management",
+  "logo": "/images/logo.png",
+  "favicon": "/favicon.ico",
+  "colors": {
+    "primary": "#0B3A78",
+    "secondary": "#F2B705",
+    "accent": "#F2B705"
+  },
+  "contact": {
+    "address": "IEM Management Building, D-1, Street No. 13, EP Block, Sector V, Bidhannagar, Kolkata 700091",
+    "phone": ["+91 33 2357 2969", "+91 33 2357 7649"],
+    "email": ["eee.iemk@gmail.com"],
+    "location": {
+      "lat": 22.5726,
+      "lng": 88.4324
+    }
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/school/iem-kolkata/",
+    "facebook": "https://www.facebook.com/iemkolkata"
+  },
+  "navigation": [
+    {
+      "label": "Home",
+      "href": "/"
+    },
+    {
+      "label": "About",
+      "href": "/about",
+      "children": [
+        { "label": "Vision & Mission", "href": "/about#vision" },
+        { "label": "Message from HOD", "href": "/about#hod" },
+        { "label": "PO, PSO & PEO", "href": "/about#outcomes" },
+        { "label": "Advisory Board", "href": "/about#advisory" }
+      ]
+    },
+    {
+      "label": "Academics",
+      "href": "/academics",
+      "children": [
+        { "label": "Routine", "href": "/academics#routine" },
+        { "label": "Syllabus", "href": "/academics#syllabus" },
+        { "label": "Laboratories", "href": "/academics/labs" },
+        { "label": "Faculty Profile", "href": "/academics/faculty" },
+        { "label": "MoU", "href": "/academics#mou" },
+        { "label": "Academic Calendar", "href": "/academics#calendar" },
+        { "label": "Holiday List", "href": "/academics#holidays" }
+      ]
+    },
+    {
+      "label": "Events",
+      "href": "/events",
+      "children": [
+        { "label": "Events Organised", "href": "/events" },
+        { "label": "Professional Societies", "href": "/events/societies" },
+        { "label": "Conferences", "href": "/events/conferences" },
+        { "label": "FDP Conducted", "href": "/events/fdp" },
+        { "label": "Magazine & Newsletter", "href": "/events/publications" },
+        { "label": "Workshops", "href": "/events/workshops" }
+      ]
+    },
+    {
+      "label": "Student Corner",
+      "href": "/student-corner",
+      "children": [
+        { "label": "Industrial Visits", "href": "/student-corner/industrial-visits" },
+        { "label": "Assignments", "href": "/student-corner/assignments" },
+        { "label": "Placements", "href": "/student-corner/placements" },
+        { "label": "Hall of Fame", "href": "/student-corner/hall-of-fame" }
+      ]
+    },
+    {
+      "label": "Awards & Achievements",
+      "href": "/awards"
+    },
+    {
+      "label": "Research",
+      "href": "/research",
+      "children": [
+        { "label": "Publications", "href": "/research#publications" },
+        { "label": "Research Grants", "href": "/research#grants" },
+        { "label": "Patents", "href": "/research#patents" }
+      ]
+    },
+    {
+      "label": "Contact",
+      "href": "/contact"
+    }
+  ]
+}
