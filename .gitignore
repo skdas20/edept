@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# extracted Google Sites data (not needed in repo)
+/extracted_data/
+
+# large zip files
+*.zip

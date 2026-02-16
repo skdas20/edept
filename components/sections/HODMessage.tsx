@@ -14,12 +14,12 @@ const HODMessage = () => {
                     {/* Image Side */}
                     <div className="w-full md:w-5/12 relative group">
                         <div className="relative aspect-[3/4] md:aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl border-4 border-white transform md:-rotate-2 group-hover:rotate-0 transition-transform duration-500">
-                            {/* Placeholder for HOD Image - using a generic academically appropriate placeholder or just a solid color if image fails */}
-                            <div className="absolute inset-0 bg-gray-200 flex items-center justify-center text-gray-400">
-                                <span className="sr-only">HOD Image Placeholder</span>
-                                <svg className="w-20 h-20" fill="currentColor" viewBox="0 0 24 24"><path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
-                            </div>
-                            {/* If real image exists, use: <Image src="/images/hod.jpg" alt="HOD" fill className="object-cover" /> */}
+                            <Image 
+                                src="/images/faculty/6f92a3e4ea097d0a1e52112fb61ff854.jpg" 
+                                alt="Prof. (Dr.) Malay Gangopadhyaya - Head of Department" 
+                                fill 
+                                className="object-cover" 
+                            />
                         </div>
 
                         <div className="absolute -bottom-6 -right-6 bg-white p-4 rounded-xl shadow-lg border border-gray-100 max-w-xs animate-float">
@@ -40,16 +40,16 @@ const HODMessage = () => {
 
                         <div className="space-y-6 text-lg text-muted-text leading-relaxed">
                             <p>
-                                "Welcome to the Department of Electronics & Communication Engineering. Our department strives to provide a dynamic learning environment that fosters innovation, critical thinking, and technical expertise."
+                                "The department emphasizes mentor-based education, practical laboratory work, and student participation in research projects spanning embedded systems, VLSI, DSP, and image processing."
                             </p>
                             <p>
-                                "We are committed to producing industry-ready engineers who are equipped to tackle the challenges of the rapidly evolving technological landscape. Through our rigorous curriculum and state-of-the-art laboratories, we ensure our students receive the best possible education."
+                                "Our programs encourage publication in international journals and involvement in interdisciplinary activities. We are committed to developing competent professionals who contribute to engineering and technology advancement."
                             </p>
                         </div>
 
                         <div className="pt-4 flex items-center gap-6">
                             <div>
-                                <h3 className="text-xl font-bold text-primary">Dr. [HOD Name]</h3>
+                                <h3 className="text-xl font-bold text-primary">Prof. (Dr.) Malay Gangopadhyaya</h3>
                                 <p className="text-muted-text">Professor & Head, ECE Department</p>
                             </div>
                             {/* Signature Placeholder */}

@@ -4,13 +4,13 @@ import Card from "@/components/ui/Card";
 import Image from "next/image";
 
 export default function About() {
-    const vision = "To be a premier department of Electronics & Communication Engineering by imparting quality education, fostering research, and nurturing innovation for societal development.";
+    const vision = "To evolve as a centre of excellence with international repute having the ability to adapt to the changing needs of industry and society through quality education, research and innovation.";
 
     const mission = [
-        "To provide a strong theoretical foundation and practical skills in Electronics & Communication Engineering.",
-        "To promote research and innovation in emerging technologies through collaborative projects.",
-        "To instill ethical values, leadership qualities, and lifelong learning for professional excellence.",
-        "To contribute to the technological advancement of society through sustainable solutions."
+        "Developing competent professionals contributing to engineering and technology advancement.",
+        "Delivering quality education meeting stakeholder expectations.",
+        "Supporting higher studies, research, and entrepreneurship initiatives.",
+        "Fostering innovation and research in emerging technologies through collaborative projects."
     ];
 
     const hod = {
@@ -18,7 +18,7 @@ export default function About() {
         designation: "Professor & Head",
         email: "malay.gangopadhyaya@iemcal.com",
         image: "/images/hod-placeholder.jpg", // Placeholder
-        message: "Welcome to the Department of Electronics & Communication Engineering. We are committed to academic excellence and holistic development of our students. Our curriculum is designed to meet industry standards while encouraging research and innovation. I invite you to explore our department and be part of our journey towards technological advancement."
+        message: "The department emphasizes mentor-based education, practical laboratory work, and student participation in research projects spanning embedded systems, VLSI, DSP, and image processing. Our programs encourage publication in international journals and involvement in interdisciplinary activities. We are committed to developing competent professionals who contribute to engineering and technology advancement."
     };
 
     const advisoryBoard = [

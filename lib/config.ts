@@ -12,7 +12,7 @@ export const siteConfig: SiteConfig = {
     accent: "#F2B705"
   },
   contact: {
-    address: "IEM Management Building, D-1, Street No. 13, EP Block, Sector V, Bidhannagar, Kolkata 700091",
+    address: "Gurukul, Y-12, Block-EP, Sector-V, Salt Lake Electronics Complex, Kolkata – 700 091, West Bengal, India",
     phone: ["+91 33 2357 2969", "+91 33 2357 7649"],
     email: ["eee.iemk@gmail.com"],
     location: {
@@ -25,54 +25,91 @@ export const siteConfig: SiteConfig = {
     facebook: "https://www.facebook.com/iemkolkata"
   },
   navigation: [
-    { label: "Home", href: "/" },
     {
-      label: "About",
-      href: "/about",
+      label: "Home",
+      href: "/",
       children: [
-        { label: "Vision & Mission", href: "/about" },
-        { label: "HOD Message", href: "/about" },
-        { label: "Faculty Members", href: "/faculty" },
-        { label: "Advisory Board", href: "/about" }
+        { label: "Accreditation", href: "/home/accreditation" },
+        { label: "Advisory Board", href: "/home/advisory-board" },
+        { label: "Academic Disciplinary Committee", href: "/home/adc" },
+        { label: "Career Guidance Cell", href: "/home/cgc" },
+        { label: "PO PSO & PEO", href: "/home/po-pso-peo" },
+        { label: "Engineer's Pledge", href: "/home/engineers-pledge" },
+        { label: "Notice", href: "/home/notice" },
+        { label: "Academic Calendar", href: "/home/academic-calendar" },
+        { label: "List of Holidays", href: "/home/holidays" },
+        { label: "Admission", href: "/home/admission" }
       ]
     },
+    { label: "Faculty Members", href: "/faculty" },
     {
-      label: "Academics",
+      label: "Course & Curriculum",
       href: "/academics",
       children: [
-        { label: "Routine", href: "/academics/routine" },
-        { label: "Laboratories", href: "/academics/labs" },
-        { label: "Syllabus", href: "/academics" },
-      ]
-    },
-    {
-      label: "Research",
-      href: "/research",
-      children: [
-        { label: "Publications", href: "/research#publications" },
-        { label: "Funded Projects", href: "/research#grants" },
-        { label: "Patents", href: "/research#patents" }
+        { label: "Infrastructure", href: "/academics/infrastructure" },
+        { label: "Library", href: "/academics/library" }
       ]
     },
     {
       label: "Events",
       href: "/events",
       children: [
-        { label: "Upcoming Events", href: "/events" },
-        { label: "Photo Gallery", href: "/gallery" },
-        { label: "Professional Chapters", href: "/events" }
+        { label: "Conference", href: "/events/conference" },
+        { label: "Seminars and Lectures", href: "/events/seminars" },
+        { label: "Faculty Development Program", href: "/events/fdp" },
+        { label: "Workshops", href: "/events/workshops" },
+        { label: "Event Reports", href: "/events/event-reports" },
+        { label: "Newsletter", href: "/events/newsletter" },
+        { label: "Magazine", href: "/events/magazine" },
+        { label: "NSS & CSR Activity", href: "/events/nss-csr" },
+        { label: "Outreach Activity", href: "/events/outreach" }
       ]
     },
     {
-      label: "Student Corner",
+      label: "Student's Corner",
       href: "/student-corner",
       children: [
-        { label: "Placements", href: "/student-corner" },
-        { label: "Achievements", href: "/student-corner" },
-        { label: "Resources", href: "/student-corner" },
-        { label: "Alumni Network", href: "/alumni" }
+        { label: "Placement", href: "/student-corner/placement" },
+        { label: "Academic ERP", href: "/student-corner/academic-erp" },
+        { label: "Student Scholarship", href: "/student-corner/scholarship" },
+        { label: "CGC", href: "/student-corner/cgc" },
+        { label: "ADC", href: "/student-corner/adc" },
+        { label: "Alumni", href: "/alumni" },
+        { label: "Benefits", href: "/student-corner/benefits" },
+        { label: "Batch Photography", href: "/student-corner/batch-photography" },
+        { label: "Tech-Fest", href: "/student-corner/tech-fest" },
+        { label: "Student's Achievement", href: "/student-corner/achievements" },
+        { label: "Student Branch Chapter", href: "/student-corner/student-branch" },
+        { label: "Industrial Visit", href: "/student-corner/industrial-visit" },
+        { label: "MatLab Campus License", href: "/student-corner/matlab-license" },
+        { label: "Photo Gallery", href: "/gallery" },
+        { label: "Extra Curricular Activity", href: "/student-corner/extra-curricular" }
       ]
     },
-    { label: "Contact", href: "/contact" }
+    {
+      label: "Research",
+      href: "/research",
+      children: [
+        { label: "IEDC-ECE", href: "/research/iedc-ece" },
+        { label: "AMRL Facility", href: "/research/amrl" },
+        { label: "IoT Research Lab", href: "/research/iot-lab" },
+        { label: "Publications", href: "/research/publications" },
+        { label: "Patent", href: "/research/patents" },
+        { label: "MoU", href: "/research/mou" },
+        { label: "Departmental Journal", href: "/research/journal" }
+      ]
+    },
+    { label: "Feedback", href: "/feedback" },
+    { label: "Calendar", href: "/calendar" },
+    {
+      label: "More",
+      href: "#",
+      children: [
+        { label: "Contact Us", href: "/contact" },
+        { label: "Innovative Teaching Learning (ITL)", href: "/itl" },
+        { label: "Alumni", href: "/alumni" },
+        { label: "Gallery", href: "/gallery" }
+      ]
+    }
   ]
 };

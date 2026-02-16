@@ -1,0 +1,247 @@
+{
+  "source": "Google Sites - IEM-ECE Department",
+  "url": "https://sites.google.com/view/iem-ece/home",
+  "extracted_date": "2026-02-15",
+
+  "home_page": {
+    "title": "IEM-ECE Dept.",
+    "navigation": [
+      "HOME",
+      "Faculty Members",
+      "Course & Curriculum",
+      "Events",
+      "Student's Corner",
+      "Research",
+      "Feedback",
+      "Calendar",
+      "Contact Us",
+      "Innovative Teaching Learning (ITL)"
+    ],
+    "department_introduction": "The Electronics and Communication Engineering department represents one of the institution's foundational engineering programs, established in 1996. The program holds NBA accreditation and AICTE approval. Originally affiliated with Kalyani University, it later transitioned to Maulana Abul Kalam Azad University of Technology. The department maintains focus on technical education while encouraging student participation in competitions and cultural activities.",
+    "key_achievement": "Postgraduate programs in VLSI and Microelectronics began in 2006.",
+    "vision": "To evolve as a centre of excellence with international repute having the ability to adapt...",
+    "mission": [
+      "Developing competent professionals contributing to engineering and technology advancement",
+      "Delivering quality education meeting stakeholder expectations",
+      "Supporting higher studies, research, and entrepreneurship initiatives"
+    ],
+    "hod_message": "The department emphasizes mentor-based education, practical laboratory work, and student participation in research projects spanning embedded systems, VLSI, DSP, and image processing. Programs encourage publication in international journals and involvement in interdisciplinary activities.",
+    "established": "1996",
+    "accreditation": ["NBA", "AICTE"],
+    "university": "Maulana Abul Kalam Azad University of Technology (formerly Kalyani University)",
+    "site_maintainers": [
+      "Prof. Samit Karmakar",
+      "Prof. Srijita Chakraborty"
+    ]
+  },
+
+  "faculty_members": {
+    "regular_faculty_list": "Available via Google Drive link",
+    "adjunct_faculty_list": "Available via Google Drive link",
+    "note": "Detailed faculty information is hosted in Google Drive documents rather than displayed directly on the page"
+  },
+
+  "course_curriculum": {
+    "ug_syllabus": "AICTE UG Syllabus with link to model curriculum documents",
+    "class_schedules": {
+      "btech_2nd_year": "Even Semester 2026 (from Jan 5, 2026)",
+      "btech_3rd_year": "Even Semester 2026 (from Jan 5, 2026)",
+      "btech_4th_year": "Even Semester 2026 (from Jan 5, 2026)",
+      "mtech_1st_year": "Even Semester 2026 (from Jan 5, 2026)"
+    },
+    "syllabi_by_semester": {
+      "3rd_4th_semester": "Foundational courses with detailed breakdowns",
+      "5th_6th_semester": "Intermediate-level engineering coursework",
+      "7th_8th_semester": "Advanced technical subjects and capstone work"
+    },
+    "postgraduate": "M.Tech curriculum materials with assignment folders",
+    "coordinator": "Prof. Dr. Ratna Chakrabarty"
+  },
+
+  "events": {
+    "current_upcoming": [
+      {
+        "name": "SYTRON 2025",
+        "dates": "August 30-31, 2025",
+        "type": "Technical Extravaganza",
+        "description": "IoT and Verilog workshops, robotic competitions, model exhibitions, poster presentations, technical quizzes, tech talks, Gen-AI app challenges, coding competitions, and gaming events",
+        "website": "https://www.sytron.co.in/",
+        "image": "sytron-2025.jpg"
+      },
+      {
+        "name": "Bengal E-Summit",
+        "website": "https://bengalesummit.in/",
+        "report": "Available via Google Drive",
+        "images": ["bengal-esummit-1.jpg", "bengal-esummit-2.jpg"]
+      }
+    ],
+    "documentation": {
+      "fdps_conducted": "Google Sheets link",
+      "entrepreneurship_activities": "Google Sheets link",
+      "workshops": "Google Sheets link",
+      "distinguished_lecture_series": "Google Sheets link",
+      "seminars": "Google Sheets link",
+      "industry_interaction_alumni_mentoring": "Google Sheets link"
+    }
+  },
+
+  "student_corner": {
+    "academic_resources": [
+      "Academic ERP portal",
+      "Career Guidance Cell (CGC)",
+      "Academic Disciplinary Committee (ADC)",
+      "Placement support with mock interviews",
+      "Student Scholarship information"
+    ],
+    "professional_development": [
+      "MatLab Campus License",
+      "Industrial Visit opportunities",
+      "Student Branch Chapter activities",
+      "Faculty mentorship networks"
+    ],
+    "student_life": [
+      "Photo Gallery",
+      "Batch Photography collections",
+      "Tech-Fest participation",
+      "Extra Curricular Activities (IEM-UEM Kolkata Marathon 2022)",
+      "Alumni networking sections"
+    ],
+    "administrative": [
+      "Academic ERP (iemcrp.com)",
+      "Benefits information page",
+      "Student Scholarship portal (iem.edu.in/scholarships)"
+    ],
+    "additional_support": [
+      "Faculty Members directory",
+      "Course & Curriculum with infrastructure",
+      "Library resources (IEM Gurukul)",
+      "Research opportunities (IEDC-ECE, IoT Research Lab)"
+    ]
+  },
+
+  "research": {
+    "research_areas": [
+      "Communication Engineering",
+      "Semiconductor devices and quantum electronics",
+      "Dielectric and substrate integrated waveguides",
+      "Antenna design (microstrip, wearable, dielectric resonator)",
+      "Filter design and cavity resonators",
+      "Low-power VLSI design",
+      "Power electronics and industrial electronics",
+      "Solid-state lighting",
+      "Microcontroller-based embedded systems",
+      "Digital image processing and computer vision",
+      "Pattern recognition and machine learning",
+      "Biomedical and medical electronics",
+      "Nanotechnology",
+      "Renewable energy and climate change",
+      "Optical systems (self-imaging, tweezers, telescopes)"
+    ],
+    "total_areas": 30,
+    "infrastructure": {
+      "iedc_ece": "Entrepreneurship development center",
+      "amrl_facility": "Advanced research laboratory",
+      "iot_research_lab": "Internet of Things specialization"
+    },
+    "outputs": [
+      "Publications",
+      "Patent filings",
+      "Memoranda of Understanding (MoU) with partners",
+      "Departmental journal"
+    ],
+    "leadership": [
+      "Prof. Samit Karmakar",
+      "Prof. Srijita Chakraborty"
+    ]
+  },
+
+  "feedback": {
+    "types": [
+      "Student Feedback",
+      "Alumni Feedback",
+      "Employer Feedback",
+      "Faculty Feedback"
+    ],
+    "methodology": {
+      "collection": "Feedback collected online and brought to IQAC for analysis",
+      "analysis": "Data compilation with deliberation at department, Board of Studies, and Governing Body levels",
+      "implementation": "Suggestions reviewed for feasibility before departmental action"
+    },
+    "improvements_from_feedback": [
+      "Added certificate courses",
+      "Extended library access to 24-hour availability",
+      "Increased internet bandwidth capacity",
+      "Mentor-mentee programs and remedial coaching",
+      "Career guidance and entrepreneurship development programs"
+    ]
+  },
+
+  "calendar": {
+    "type": "Google Calendar embed",
+    "source": "en.indian#holiday@group.v.calendar.google.com",
+    "additional_resources": {
+      "holiday_list": "Link to institution's holiday schedule",
+      "academic_calendar": "Google Drive link"
+    }
+  },
+
+  "contact": {
+    "address": "Gurukul, Y-12, Block-EP, Sector-V, Salt Lake Electronics Complex, Kolkata – 700 091, West Bengal, India",
+    "phone": [
+      "+91 33 2357 2969",
+      "+91 33 2357 7649"
+    ],
+    "fax": "+91 33 2357 8302",
+    "online_form": "Embedded Google Form for inquiries",
+    "maintainers": [
+      {
+        "name": "Prof. Samit Karmakar",
+        "linkedin": "https://in.linkedin.com/in/samit-karmakar-4a325a188"
+      },
+      {
+        "name": "Prof. Srijita Chakraborty",
+        "linkedin": "https://in.linkedin.com/in/srijita-chakraborty-1b940184"
+      }
+    ]
+  },
+
+  "innovative_teaching_learning": {
+    "main_portal": "https://www.iemlearning.com/",
+    "academic_management": "https://www.iemcrp.com/",
+    "associated_platforms": [
+      "Youtube Gymkhana TV",
+      "NPTEL Swayam Portal (https://swayam.gov.in/)",
+      "IEM Alumni Association network"
+    ],
+    "institutional_support": {
+      "iem_main_website": "https://iem.edu.in/",
+      "smart_society_initiative": "https://smartsociety.org/"
+    }
+  },
+
+  "images_found": {
+    "note": "Images are hosted on Google CDN with access restrictions",
+    "images": [
+      {
+        "name": "sytron-2025.jpg",
+        "description": "SYTRON 2025 event banner",
+        "status": "Access restricted - manual download needed"
+      },
+      {
+        "name": "bengal-esummit-1.jpg",
+        "description": "Bengal E-Summit photo 1",
+        "status": "Access restricted - manual download needed"
+      },
+      {
+        "name": "bengal-esummit-2.jpg",
+        "description": "Bengal E-Summit photo 2",
+        "status": "Access restricted - manual download needed"
+      },
+      {
+        "name": "department-header.jpg",
+        "description": "Department header/banner image",
+        "status": "Access restricted - manual download needed"
+      }
+    ]
+  }
+}

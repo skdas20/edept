@@ -16,10 +16,14 @@ export default function StudentCorner() {
     ];
 
     const resources = [
-        { title: "Previous Year Question Papers", link: "#" },
-        { title: "Lab Manuals", link: "#" },
-        { title: "Video Lectures", link: "#" },
-        { title: "Project Guidelines", link: "#" },
+        { title: "Academic ERP Portal", link: "https://www.iemcrp.com/iemEn/loginCole.jsp?mcole=104", icon: "academic" },
+        { title: "MatLab Campus License", link: "https://in.mathworks.com/academia/tah-portal/institute-of-engineering-and-management-31600358.html", icon: "code" },
+        { title: "Student Scholarship", link: "https://iem.edu.in/scholarships/", icon: "scholarship" },
+        { title: "Career Guidance Cell (CGC)", link: "#", icon: "career" },
+        { title: "Academic Disciplinary Committee (ADC)", link: "#", icon: "committee" },
+        { title: "Industrial Visit Opportunities", link: "#", icon: "industry" },
+        { title: "Student Branch Chapter Activities", link: "#", icon: "activities" },
+        { title: "Faculty Mentorship Networks", link: "#", icon: "mentor" },
     ];
 
     return (
@@ -91,19 +95,78 @@ export default function StudentCorner() {
 
             {/* Student Resources */}
             <section className="py-20 bg-surface-2">
-                <div className="container mx-auto px-4 max-w-4xl">
-                    <h2 className="text-3xl font-bold font-heading text-primary mb-8 text-center">Academic Resources</h2>
-                    <div className="grid md:grid-cols-2 gap-6">
+                <div className="container mx-auto px-4 max-w-5xl">
+                    <h2 className="text-3xl font-bold font-heading text-primary mb-8 text-center">Academic Resources & Support</h2>
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {resources.map((res, idx) => (
-                            <a href={res.link} key={idx} className="block group">
-                                <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:border-primary transition-all duration-300 flex items-center justify-between">
-                                    <span className="font-bold text-primary group-hover:text-accent transition-colors">{res.title}</span>
-                                    <div className="w-10 h-10 bg-surface-2 rounded-full flex items-center justify-center text-gray-400 group-hover:bg-primary group-hover:text-white transition-colors">
-                                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+                            <a href={res.link} key={idx} target={res.link.startsWith('http') ? '_blank' : '_self'} rel={res.link.startsWith('http') ? 'noopener noreferrer' : ''} className="block group">
+                                <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:border-primary hover:shadow-md transition-all duration-300">
+                                    <div className="flex items-start gap-4">
+                                        <div className="w-12 h-12 bg-primary-50 rounded-xl flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors flex-shrink-0">
+                                            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                            </svg>
+                                        </div>
+                                        <div className="flex-1">
+                                            <span className="font-bold text-primary group-hover:text-accent transition-colors block mb-1">{res.title}</span>
+                                            {res.link.startsWith('http') && (
+                                                <span className="text-xs text-muted-text flex items-center gap-1">
+                                                    <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                                                    External Link
+                                                </span>
+                                            )}
+                                        </div>
                                     </div>
                                 </div>
                             </a>
                         ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Professional Development */}
+            <section className="py-20 bg-surface">
+                <div className="container mx-auto px-4 max-w-4xl">
+                    <h2 className="text-3xl font-bold font-heading text-primary mb-8 text-center">Student Life & Activities</h2>
+                    <div className="grid md:grid-cols-2 gap-8">
+                        <div className="bg-white p-8 rounded-3xl shadow-sm border border-gray-100">
+                            <div className="w-14 h-14 bg-accent-50 rounded-2xl flex items-center justify-center text-accent-600 mb-4">
+                                <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+                            </div>
+                            <h3 className="text-xl font-bold text-primary mb-3">Photo Gallery</h3>
+                            <p className="text-muted-text mb-4">Browse through our collection of department events, activities, and memorable moments</p>
+                            <a href="/gallery" className="text-accent-600 font-bold hover:underline inline-flex items-center gap-2">
+                                View Gallery <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                            </a>
+                        </div>
+                        <div className="bg-white p-8 rounded-3xl shadow-sm border border-gray-100">
+                            <div className="w-14 h-14 bg-green-50 rounded-2xl flex items-center justify-center text-green-600 mb-4">
+                                <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" /></svg>
+                            </div>
+                            <h3 className="text-xl font-bold text-primary mb-3">Tech-Fest Participation</h3>
+                            <p className="text-muted-text mb-4">Annual technical festival showcasing student projects, competitions, and innovation</p>
+                            <a href="/events" className="text-accent-600 font-bold hover:underline inline-flex items-center gap-2">
+                                View Events <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                            </a>
+                        </div>
+                        <div className="bg-white p-8 rounded-3xl shadow-sm border border-gray-100">
+                            <div className="w-14 h-14 bg-purple-50 rounded-2xl flex items-center justify-center text-purple-600 mb-4">
+                                <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
+                            </div>
+                            <h3 className="text-xl font-bold text-primary mb-3">Alumni Networking</h3>
+                            <p className="text-muted-text mb-4">Connect with successful alumni for mentorship, career guidance, and industry insights</p>
+                            <a href="/alumni" className="text-accent-600 font-bold hover:underline inline-flex items-center gap-2">
+                                Meet Alumni <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                            </a>
+                        </div>
+                        <div className="bg-white p-8 rounded-3xl shadow-sm border border-gray-100">
+                            <div className="w-14 h-14 bg-orange-50 rounded-2xl flex items-center justify-center text-orange-600 mb-4">
+                                <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" /></svg>
+                            </div>
+                            <h3 className="text-xl font-bold text-primary mb-3">Extra Curricular Activities</h3>
+                            <p className="text-muted-text mb-4">Participate in sports, cultural events, and community service initiatives</p>
+                            <span className="text-muted-text text-sm">IEM-UEM Kolkata Marathon, Cultural Fests & More</span>
+                        </div>
                     </div>
                 </div>
             </section>

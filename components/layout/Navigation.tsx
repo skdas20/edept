@@ -68,34 +68,53 @@ const Navigation: React.FC<NavigationProps> = ({ items, mobile = false, onItemCl
           <div key={item.label}>
             {item.children && item.children.length > 0 ? (
               <div>
-                <button
-                  onClick={() => handleMobileToggle(item.label)}
-                  className={cn(
-                    'w-full flex items-center justify-between px-4 py-3 text-left rounded-lg transition-colors',
-                    isActive(item.href)
-                      ? 'bg-primary-50 text-primary font-medium'
-                      : 'text-text hover:bg-gray-50'
-                  )}
-                  aria-expanded={openMobileAccordion === item.label}
-                >
-                  <span>{item.label}</span>
-                  <svg
+                <div className={cn(
+                  'flex items-stretch rounded-lg overflow-hidden transition-colors',
+                  isActive(item.href)
+                    ? 'bg-primary-50'
+                    : 'hover:bg-gray-50'
+                )}>
+                  <Link
+                    href={item.href}
+                    onClick={handleLinkClick}
                     className={cn(
-                      'w-5 h-5 transition-transform',
-                      openMobileAccordion === item.label && 'rotate-180'
+                      'flex-1 px-4 py-3 text-left transition-colors',
+                      isActive(item.href)
+                        ? 'text-primary font-medium'
+                        : 'text-text'
                     )}
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M19 9l-7 7-7-7"
-                    />
-                  </svg>
-                </button>
+                    {item.label}
+                  </Link>
+                  <button
+                    onClick={() => handleMobileToggle(item.label)}
+                    className={cn(
+                      'px-3 py-3 transition-colors border-l',
+                      isActive(item.href)
+                        ? 'text-primary border-primary-100'
+                        : 'text-text border-gray-200'
+                    )}
+                    aria-expanded={openMobileAccordion === item.label}
+                    aria-label={`Toggle ${item.label} submenu`}
+                  >
+                    <svg
+                      className={cn(
+                        'w-5 h-5 transition-transform',
+                        openMobileAccordion === item.label && 'rotate-180'
+                      )}
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </svg>
+                  </button>
+                </div>
                 {openMobileAccordion === item.label && (
                   <div className="ml-4 mt-1 space-y-1">
                     {item.children.map((child) => (
@@ -148,9 +167,9 @@ const Navigation: React.FC<NavigationProps> = ({ items, mobile = false, onItemCl
         >
           {item.children && item.children.length > 0 ? (
             <>
-              <button
+              <Link
+                href={item.href}
                 className={cn(
-                  'px-4 py-2 rounded-lg text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2',
                   'px-4 py-2 rounded-lg text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2',
                   isActive(item.href)
                     ? transparent ? 'text-accent bg-white/10' : 'text-primary bg-primary-50'
@@ -178,7 +197,7 @@ const Navigation: React.FC<NavigationProps> = ({ items, mobile = false, onItemCl
                     />
                   </svg>
                 </span>
-              </button>
+              </Link>
               {openDropdown === item.label && (
                 <div
                   className="absolute top-full left-0 mt-1 w-56 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50"

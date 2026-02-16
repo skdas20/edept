@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:sites.google.com)",
+      "Bash(curl:*)",
+      "Bash(file:*)"
+    ]
+  }
+}
