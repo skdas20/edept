@@ -54,9 +54,9 @@ export default function StudentBranchChapter() {
                         </div>
 
                         <h3 className="text-2xl font-bold text-primary mb-6">Chapter Activities</h3>
-                        <div className="grid md:grid-cols-4 gap-6 mb-12">
+                        <div className="grid md:grid-cols-3 gap-6 mb-12">
                             {images.map((image, index) => (
-                                <div key={index} className="relative aspect-square rounded-2xl overflow-hidden shadow-lg">
+                                <div key={index} className="relative aspect-video rounded-2xl overflow-hidden shadow-lg">
                                     <Image
                                         src={`/images/student-branch/${image}`}
                                         alt={`Student Branch Activity ${index + 1}`}

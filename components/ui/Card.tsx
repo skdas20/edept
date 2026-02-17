@@ -30,15 +30,15 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
     },
     ref
   ) => {
-    const baseStyles = 'rounded-card overflow-hidden transition-all duration-200';
+    const baseStyles = 'group overflow-hidden rounded-card border transition-all duration-300';
 
     const variantStyles = {
-      default: 'bg-white border border-[#E2E8F0]',
-      elevated: 'bg-white shadow-md hover:shadow-lg',
-      outlined: 'bg-white border-2 border-primary',
+      default: 'border-border bg-white/95 shadow-sm',
+      elevated: 'border-border bg-white/95 shadow-md hover:shadow-lg',
+      outlined: 'border-primary/30 bg-white',
     };
 
-    const hoverStyles = href ? 'hover:scale-[1.02] cursor-pointer' : '';
+    const hoverStyles = href ? 'cursor-pointer hover:-translate-y-1 hover:border-primary/25' : '';
 
     const combinedClassName = cn(
       baseStyles,
@@ -50,27 +50,27 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
     const cardContent = (
       <div ref={ref} className={combinedClassName}>
         {image && (
-          <div className="relative w-full h-48 overflow-hidden">
+          <div className="image-frame relative h-52 w-full overflow-hidden rounded-none border-0">
             <Image
               src={image}
               alt={imageAlt}
               fill
-              className="object-cover"
+              className="object-cover object-center transition-transform duration-500 group-hover:scale-[1.04]"
               sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
             />
           </div>
         )}
         <div className="p-6">
           {title && (
-            <h3 className="text-xl font-semibold text-[#0F172A] mb-2">{title}</h3>
+            <h3 className="mb-2 text-xl font-semibold text-text">{title}</h3>
           )}
           {description && (
-            <p className="text-[#475569] mb-4">{description}</p>
+            <p className="mb-4 text-muted-text">{description}</p>
           )}
           {children}
         </div>
         {footer && (
-          <div className="px-6 py-4 bg-[#F1F5F9] border-t border-[#E2E8F0]">
+          <div className="border-t border-border bg-surface-2 px-6 py-4">
             {footer}
           </div>
         )}

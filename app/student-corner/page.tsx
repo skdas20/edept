@@ -7,14 +7,6 @@ export default function StudentCorner() {
         { title: "Best Paper Award at IEEE Conference", student: "Rohan Das & Group", description: "presented a paper on '5G Antenna Design'.", image: "" },
     ];
 
-    const placements = [
-        { company: "TCS Digital", package: "7.0 LPA", students: 15 },
-        { company: "Cognizant GenC Next", package: "6.75 LPA", students: 10 },
-        { company: "PwC", package: "6.0 LPA", students: 5 },
-        { company: "Capgemini Analyst", package: "4.25 LPA", students: 25 },
-        { company: "Keysight Technologies", package: "9.0 LPA", students: 2 },
-    ];
-
     const resources = [
         { title: "Academic ERP Portal", link: "https://www.iemcrp.com/iemEn/loginCole.jsp?mcole=104", icon: "academic" },
         { title: "MatLab Campus License", link: "https://in.mathworks.com/academia/tah-portal/institute-of-engineering-and-management-31600358.html", icon: "code" },

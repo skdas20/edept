@@ -32,40 +32,72 @@ export default function Faculty() {
                 <div className="container mx-auto px-4">
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
                         {faculty.map((fac, idx) => (
-                            <div key={idx} className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 group hover:border-primary">
-                                <div className="h-64 bg-gray-200 relative overflow-hidden">
-                                    {fac.image ? (
-                                        <Image
-                                            src={fac.image}
-                                            alt={fac.name}
-                                            fill
-                                            className="object-cover"
-                                        />
-                                    ) : (
-                                        <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-gray-100 to-gray-200 text-gray-400">
-                                            <svg className="w-20 h-20" fill="currentColor" viewBox="0 0 24 24"><path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
-                                        </div>
-                                    )}
-                                    {/* Overlay with Email Action */}
-                                    <div className="absolute inset-0 bg-primary/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4">
-                                        <a href={`mailto:${fac.email}`} className="px-6 py-2 bg-white text-primary font-bold rounded-full hover:bg-accent hover:text-white transition-colors transform hover:-translate-y-1">
-                                            Send Email
-                                        </a>
+                            <div key={idx} className="group relative h-full rounded-[22px] border border-[#d8deea] bg-white shadow-[0_14px_28px_rgba(15,23,42,0.14)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_22px_36px_rgba(15,23,42,0.18)]">
+                                <div className="relative z-0 h-[70px] rounded-t-[22px] bg-gradient-to-r from-[#0F2B59] to-[#1E5EA3]">
+                                    <div className="absolute inset-x-0 bottom-0 h-[2px] bg-gradient-to-r from-transparent via-[#C89A2B]/80 to-transparent" />
+                                </div>
+
+                                <div className="absolute left-1/2 top-[14px] z-20 h-[106px] w-[106px] -translate-x-1/2 rounded-full border-[5px] border-[#C89A2B] bg-white p-[3px] shadow-[0_10px_20px_rgba(15,23,42,0.2)]">
+                                    <div className="relative h-full w-full overflow-hidden rounded-full">
+                                        {fac.image ? (
+                                            <Image
+                                                src={fac.image}
+                                                alt={fac.name}
+                                                fill
+                                                className="object-cover object-top"
+                                            />
+                                        ) : (
+                                            <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-gray-100 to-gray-200 text-gray-400">
+                                                <svg className="w-10 h-10" fill="currentColor" viewBox="0 0 24 24"><path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
+                                            </div>
+                                        )}
                                     </div>
                                 </div>
-                                <div className="p-6 text-center">
-                                    <h3 className="text-lg font-bold text-primary mb-1 line-clamp-1 group-hover:text-accent transition-colors">{fac.name}</h3>
-                                    <p className="text-xs font-bold text-accent-600 uppercase tracking-wide mb-4">{fac.designation}</p>
 
-                                    <div className="border-t border-gray-100 pt-4 mt-2 space-y-2 text-left">
-                                        <p className="text-sm text-muted-text flex justify-between">
-                                            <span className="font-semibold text-gray-700">Qualification:</span>
-                                            <span>{fac.qualification}</span>
+                                <div className="relative z-10 flex h-[calc(100%-70px)] flex-col px-4 pb-5 pt-[62px]">
+                                    <div className="mt-3 px-1 text-center">
+                                        <h3 className="text-[1.55rem] leading-[1.28] font-bold text-[#14171e]">
+                                            {fac.name}
+                                        </h3>
+                                        <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-[#9D7A24]">
+                                            {fac.designation}
                                         </p>
-                                        <p className="text-sm text-muted-text flex justify-between">
-                                            <span className="font-semibold text-gray-700">Area:</span>
-                                            <span className="text-right truncate w-1/2">{fac.area}</span>
-                                        </p>
+                                    </div>
+
+                                    <div className="mt-4 rounded-2xl border border-[#d8d3c2] bg-[#f7f6ef] p-3.5">
+                                        <div className="flex items-center justify-between gap-2 text-[13px] text-[#1f2937]">
+                                            <span className="inline-flex items-center gap-2">
+                                                <svg className="h-4 w-4 text-[#465266]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M12 14l9-5-9-5-9 5 9 5z" />
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                                                </svg>
+                                                Qualification
+                                            </span>
+                                            <span className="rounded-full bg-[#0F2B59] px-2.5 py-0.5 text-[11px] font-semibold text-white">{fac.qualification}</span>
+                                        </div>
+                                        <div className="mt-2 h-px bg-[#e4deca]" />
+                                        <div className="mt-2 flex items-start justify-between gap-2 text-[13px] text-[#1f2937]">
+                                            <span className="inline-flex items-center gap-2 whitespace-nowrap">
+                                                <svg className="h-4 w-4 text-[#465266]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                                </svg>
+                                                Area
+                                            </span>
+                                            <span className="text-right text-[12px] leading-[1.35] text-[#344054]">{fac.area}</span>
+                                        </div>
+                                    </div>
+
+                                    <div className="mt-auto pt-4">
+                                        <a
+                                            href={`mailto:${fac.email}`}
+                                            className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#0F2B59] via-[#174a89] to-[#C89A2B] px-4 py-2.5 text-sm font-semibold text-white shadow-md transition-transform hover:-translate-y-0.5"
+                                        >
+                                            <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                            </svg>
+                                            Send Email
+                                        </a>
                                     </div>
                                 </div>
                             </div>

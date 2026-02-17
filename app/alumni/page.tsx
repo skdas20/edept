@@ -102,7 +102,7 @@ export default function Alumni() {
                                     {/* Content */}
                                     <div className="flex-1 p-6 flex flex-col justify-between">
                                         <div>
-                                            <div className="text-accent text-5xl font-serif mb-2">"</div>
+                                            <div className="text-accent text-5xl font-serif mb-2">&ldquo;</div>
                                             <p className="text-muted-text italic leading-relaxed mb-4">
                                                 {alumni.quote}
                                             </p>

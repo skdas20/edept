@@ -1,5 +1,4 @@
 import PageHeader from "@/components/layout/PageHeader";
-import Image from "next/image";
 
 export default function InnovativeTeachingLearning() {
     return (

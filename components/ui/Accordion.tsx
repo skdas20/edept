@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState } from 'react';
 import { cn } from '../../lib/utils';
 
 export interface AccordionItem {
@@ -81,32 +81,20 @@ const AccordionItemComponent: React.FC<AccordionItemComponentProps> = ({
   onToggle,
   onKeyDown,
 }) => {
-  const contentRef = useRef<HTMLDivElement>(null);
-  const [height, setHeight] = useState<number | undefined>(0);
-
-  useEffect(() => {
-    if (isOpen) {
-      const contentEl = contentRef.current;
-      setHeight(contentEl?.scrollHeight);
-    } else {
-      setHeight(0);
-    }
-  }, [isOpen]);
-
   return (
-    <div className="border border-[#E2E8F0] rounded-lg overflow-hidden">
+    <div className="overflow-hidden rounded-xl border border-border bg-white/95 shadow-sm">
       <button
         id={`accordion-button-${item.id}`}
-        className="w-full flex items-center justify-between px-6 py-4 text-left bg-white hover:bg-[#F1F5F9] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-inset"
+        className="flex w-full items-center justify-between bg-white px-6 py-4 text-left transition-colors duration-200 hover:bg-primary-50/65 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-inset"
         onClick={onToggle}
         onKeyDown={onKeyDown}
         aria-expanded={isOpen}
         aria-controls={`accordion-content-${item.id}`}
       >
-        <span className="font-semibold text-[#0F172A]">{item.title}</span>
+        <span className="font-semibold text-text">{item.title}</span>
         <svg
           className={cn(
-            'w-5 h-5 text-[#475569] transition-transform duration-200',
+            'h-5 w-5 text-muted-text transition-transform duration-200',
             isOpen && 'transform rotate-180'
           )}
           fill="none"
@@ -123,13 +111,12 @@ const AccordionItemComponent: React.FC<AccordionItemComponentProps> = ({
       </button>
       <div
         id={`accordion-content-${item.id}`}
-        ref={contentRef}
-        className="transition-all duration-300 ease-in-out overflow-hidden"
-        style={{ height: height }}
+        className="grid overflow-hidden transition-[grid-template-rows] duration-300 ease-in-out"
+        style={{ gridTemplateRows: isOpen ? '1fr' : '0fr' }}
         aria-hidden={!isOpen}
       >
-        <div className="px-6 py-4 text-[#475569] bg-[#F1F5F9]">
-          {item.content}
+        <div className="min-h-0 bg-surface-2 px-6 py-4 text-muted-text">
+          <div>{item.content}</div>
         </div>
       </div>
     </div>

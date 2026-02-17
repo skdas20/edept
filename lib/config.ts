@@ -1,18 +1,18 @@
 import type { SiteConfig } from '@/types';
 
 export const siteConfig: SiteConfig = {
-  siteName: "EEE Department - IEM",
+  siteName: "ECE Department - IEM",
   department: "Electronics & Communication Engineering",
   institution: "Institute of Engineering & Management",
-  logo: "",
+  logo: "/images/IEM_Logo-150x150.png",
   favicon: "/favicon.ico",
   colors: {
-    primary: "#0B3A78",
-    secondary: "#F2B705",
-    accent: "#F2B705"
+    primary: "#0F2B59",
+    secondary: "#C89A2B",
+    accent: "#C89A2B"
   },
   contact: {
-    address: "Gurukul, Y-12, Block-EP, Sector-V, Salt Lake Electronics Complex, Kolkata – 700 091, West Bengal, India",
+    address: "Gurukul, Y-12, Block-EP, Sector-V, Salt Lake Electronics Complex, Kolkata - 700091, West Bengal, India",
     phone: ["+91 33 2357 2969", "+91 33 2357 7649"],
     email: ["eee.iemk@gmail.com"],
     location: {

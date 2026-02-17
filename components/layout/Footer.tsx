@@ -9,71 +9,45 @@ export interface FooterProps {
 
 const Footer: React.FC<FooterProps> = ({ config, quickLinks = [] }) => {
   const currentYear = new Date().getFullYear();
+  const footerLinks =
+    quickLinks.length > 0
+      ? quickLinks
+      : config.navigation.filter((item) => item.href !== '#').slice(0, 8);
 
   return (
-    <footer className="bg-primary text-white">
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* About Section */}
+    <footer className="relative mt-16 overflow-hidden bg-primary-dark text-white">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_25%,rgba(200,154,43,0.26),transparent_30%),radial-gradient(circle_at_80%_0%,rgba(255,255,255,0.11),transparent_26%)]" />
+      <div className="absolute inset-0 bg-[url('/images/circuit-pattern.svg')] opacity-[0.05]" />
+
+      <div className="container relative mx-auto px-4 py-14">
+        <div className="mb-10 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
           <div>
-            <h3 className="text-lg font-bold mb-4">{config.department}</h3>
-            <p className="text-sm text-white/80 mb-4">
-              {config.institution}
-            </p>
-            <p className="text-sm text-white/80">
-              Excellence in Electronics & Communication Engineering Education
+            <h3 className="font-heading text-xl font-semibold">{config.department}</h3>
+            <p className="mt-3 text-sm text-white/80">{config.institution}</p>
+            <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/75">
+              Building engineers with strong fundamentals, practical depth, and leadership in emerging communication technologies.
             </p>
           </div>
 
-          {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-bold mb-4">Quick Links</h3>
-            <ul className="space-y-2">
-              {quickLinks.length > 0 ? (
-                quickLinks.map((link) => (
-                  <li key={link.href}>
-                    <Link
-                      href={link.href}
-                      className="text-sm text-white/80 hover:text-white transition-colors"
-                    >
-                      {link.label}
-                    </Link>
-                  </li>
-                ))
-              ) : (
-                <>
-                  <li>
-                    <Link href="/about" className="text-sm text-white/80 hover:text-white transition-colors">
-                      About Us
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/academics" className="text-sm text-white/80 hover:text-white transition-colors">
-                      Academics
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/events" className="text-sm text-white/80 hover:text-white transition-colors">
-                      Events
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/contact" className="text-sm text-white/80 hover:text-white transition-colors">
-                      Contact
-                    </Link>
-                  </li>
-                </>
-              )}
+            <h3 className="font-heading text-lg font-semibold">Quick Links</h3>
+            <ul className="mt-4 space-y-2.5">
+              {footerLinks.map((link) => (
+                <li key={link.href}>
+                  <Link href={link.href} className="text-sm text-white/80 hover:text-accent-light">
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Contact Information */}
           <div>
-            <h3 className="text-lg font-bold mb-4">Contact Us</h3>
-            <div className="space-y-3 text-sm text-white/80">
-              <div className="flex items-start space-x-2">
+            <h3 className="font-heading text-lg font-semibold">Contact</h3>
+            <div className="mt-4 space-y-3 text-sm text-white/80">
+              <div className="flex items-start gap-2.5">
                 <svg
-                  className="w-5 h-5 mt-0.5 flex-shrink-0"
+                  className="mt-0.5 h-5 w-5 shrink-0 text-accent-light"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -94,9 +68,9 @@ const Footer: React.FC<FooterProps> = ({ config, quickLinks = [] }) => {
                 <span>{config.contact.address}</span>
               </div>
               {config.contact.phone.map((phone, index) => (
-                <div key={index} className="flex items-center space-x-2">
+                <div key={index} className="flex items-center gap-2.5">
                   <svg
-                    className="w-5 h-5 flex-shrink-0"
+                    className="h-5 w-5 shrink-0 text-accent-light"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -108,15 +82,15 @@ const Footer: React.FC<FooterProps> = ({ config, quickLinks = [] }) => {
                       d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
                     />
                   </svg>
-                  <a href={`tel:${phone.replace(/\s/g, '')}`} className="hover:text-white transition-colors">
+                  <a href={`tel:${phone.replace(/\s/g, '')}`} className="hover:text-accent-light">
                     {phone}
                   </a>
                 </div>
               ))}
               {config.contact.email.map((email, index) => (
-                <div key={index} className="flex items-center space-x-2">
+                <div key={index} className="flex items-center gap-2.5">
                   <svg
-                    className="w-5 h-5 flex-shrink-0"
+                    className="h-5 w-5 shrink-0 text-accent-light"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -128,7 +102,7 @@ const Footer: React.FC<FooterProps> = ({ config, quickLinks = [] }) => {
                       d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                     />
                   </svg>
-                  <a href={`mailto:${email}`} className="hover:text-white transition-colors">
+                  <a href={`mailto:${email}`} className="hover:text-accent-light">
                     {email}
                   </a>
                 </div>
@@ -136,16 +110,18 @@ const Footer: React.FC<FooterProps> = ({ config, quickLinks = [] }) => {
             </div>
           </div>
 
-          {/* Social Media Links */}
           <div>
-            <h3 className="text-lg font-bold mb-4">Connect With Us</h3>
-            <div className="flex space-x-4">
+            <h3 className="font-heading text-lg font-semibold">Connect</h3>
+            <p className="mt-4 text-sm text-white/75">
+              Follow departmental updates, achievements, and announcements across social platforms.
+            </p>
+            <div className="mt-5 flex flex-wrap gap-3">
               {config.social.facebook && (
                 <a
                   href={config.social.facebook}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors"
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-white/10 transition-colors hover:border-accent-light hover:bg-white/20"
                   aria-label="Facebook"
                 >
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -158,7 +134,7 @@ const Footer: React.FC<FooterProps> = ({ config, quickLinks = [] }) => {
                   href={config.social.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors"
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-white/10 transition-colors hover:border-accent-light hover:bg-white/20"
                   aria-label="LinkedIn"
                 >
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -171,7 +147,7 @@ const Footer: React.FC<FooterProps> = ({ config, quickLinks = [] }) => {
                   href={config.social.twitter}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors"
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-white/10 transition-colors hover:border-accent-light hover:bg-white/20"
                   aria-label="Twitter"
                 >
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -184,7 +160,7 @@ const Footer: React.FC<FooterProps> = ({ config, quickLinks = [] }) => {
                   href={config.social.youtube}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors"
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-white/10 transition-colors hover:border-accent-light hover:bg-white/20"
                   aria-label="YouTube"
                 >
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -196,17 +172,16 @@ const Footer: React.FC<FooterProps> = ({ config, quickLinks = [] }) => {
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="mt-12 pt-8 border-t border-white/20">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-sm text-white/80">
+        <div className="border-t border-white/20 pt-6">
+          <div className="flex flex-col items-center justify-between gap-3 text-center md:flex-row md:text-left">
+            <p className="text-sm text-white/75">
               © {currentYear} {config.department}, {config.institution}. All rights reserved.
             </p>
-            <div className="flex space-x-6 text-sm text-white/80">
-              <Link href="/privacy" className="hover:text-white transition-colors">
+            <div className="flex gap-6 text-sm text-white/75">
+              <Link href="/privacy" className="hover:text-accent-light">
                 Privacy Policy
               </Link>
-              <Link href="/terms" className="hover:text-white transition-colors">
+              <Link href="/terms" className="hover:text-accent-light">
                 Terms of Service
               </Link>
             </div>

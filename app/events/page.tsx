@@ -1,5 +1,6 @@
 import React from 'react';
 import PageHeader from "@/components/layout/PageHeader";
+import Image from "next/image";
 
 export default function Events() {
     const upcomingEvents = [
@@ -82,9 +83,9 @@ export default function Events() {
                     <h2 className="text-3xl font-bold font-heading text-primary mb-12 text-center">Past Events Gallery</h2>
                     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                         {pastEvents.map((event, idx) => (
-                            <div key={idx} className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow group cursor-pointer">
+                            <div key={idx} className="elevated-card rounded-2xl overflow-hidden transition-shadow group cursor-pointer">
                                 <div className="h-48 bg-gray-300 relative overflow-hidden">
-                                    <img src={event.image} alt={event.title} className="w-full h-full object-cover" />
+                                    <Image src={event.image} alt={event.title} fill className="object-cover" />
                                     <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                                         <svg className="w-8 h-8 text-white scale-0 group-hover:scale-100 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" /></svg>
                                     </div>

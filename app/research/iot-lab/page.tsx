@@ -3,8 +3,8 @@ import Image from "next/image";
 
 export default function IoTResearchLab() {
     const images = [
-        "8eb2fb872a865bb54139963b7f6a1c27.jpg",
-        "c90b60a13f091a301a5338b4ff8f9887.jpg"
+        "758c4ebcba2f0b07e653c37d5a9459ea.jpg",
+        "bf2cf9bc1cf8c705bf81d586cb566747.jpg"
     ];
 
     return (
@@ -24,7 +24,7 @@ export default function IoTResearchLab() {
                             {images.map((image, index) => (
                                 <div key={index} className="relative aspect-video rounded-2xl overflow-hidden shadow-lg">
                                     <Image
-                                        src={`/images/research/${image}`}
+                                        src={`/images/labs/${image}`}
                                         alt={`IoT Lab ${index + 1}`}
                                         fill
                                         className="object-cover hover:scale-105 transition-transform duration-300"

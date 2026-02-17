@@ -20,13 +20,13 @@ export default function ExtraCurricularActivity() {
 
     return (
         <div className="flex flex-col min-h-screen">
-            <PageHeader title="Extra Curricular Activity" description="Beyond Academics - Sports, Culture & More" />
+            <PageHeader title="Extra Curricular Activity" description="Beyond Academics - Sports, Culture and More" />
             <section className="py-20 bg-surface">
                 <div className="container mx-auto px-4 max-w-6xl">
                     <div className="bg-white rounded-3xl shadow-lg p-12">
                         <h2 className="text-3xl font-bold text-primary mb-6">Extra Curricular Activities</h2>
                         <p className="text-lg text-muted-text mb-12">
-                            The ECE Department encourages holistic development through diverse extra-curricular activities 
+                            The ECE Department encourages holistic development through diverse extra-curricular activities
                             including sports, cultural events, social service, and student clubs.
                         </p>
 
@@ -67,24 +67,24 @@ export default function ExtraCurricularActivity() {
                             <div className="bg-purple-50 rounded-2xl p-8">
                                 <h3 className="text-2xl font-bold text-primary mb-4">Annual Events</h3>
                                 <ul className="space-y-2 text-muted-text">
-                                    <li className="flex items-start"><span className="text-accent-600 mr-2">•</span><span>Annual Sports Meet</span></li>
-                                    <li className="flex items-start"><span className="text-accent-600 mr-2">•</span><span>Cultural Festival</span></li>
-                                    <li className="flex items-start"><span className="text-accent-600 mr-2">•</span><span>IEM-UEM Kolkata Marathon</span></li>
-                                    <li className="flex items-start"><span className="text-accent-600 mr-2">•</span><span>Freshers' Welcome</span></li>
-                                    <li className="flex items-start"><span className="text-accent-600 mr-2">•</span><span>Farewell Ceremony</span></li>
-                                    <li className="flex items-start"><span className="text-accent-600 mr-2">•</span><span>Independence Day & Republic Day Celebrations</span></li>
+                                    <li className="flex items-start"><span className="text-accent-600 mr-2">&bull;</span><span>Annual Sports Meet</span></li>
+                                    <li className="flex items-start"><span className="text-accent-600 mr-2">&bull;</span><span>Cultural Festival</span></li>
+                                    <li className="flex items-start"><span className="text-accent-600 mr-2">&bull;</span><span>IEM-UEM Kolkata Marathon</span></li>
+                                    <li className="flex items-start"><span className="text-accent-600 mr-2">&bull;</span><span>Freshers&apos; Welcome</span></li>
+                                    <li className="flex items-start"><span className="text-accent-600 mr-2">&bull;</span><span>Farewell Ceremony</span></li>
+                                    <li className="flex items-start"><span className="text-accent-600 mr-2">&bull;</span><span>Independence Day and Republic Day Celebrations</span></li>
                                 </ul>
                             </div>
 
                             <div className="bg-orange-50 rounded-2xl p-8">
                                 <h3 className="text-2xl font-bold text-primary mb-4">Participation Benefits</h3>
                                 <ul className="space-y-2 text-muted-text">
-                                    <li className="flex items-start"><span className="text-accent-600 mr-2">•</span><span>Personality Development</span></li>
-                                    <li className="flex items-start"><span className="text-accent-600 mr-2">•</span><span>Leadership Skills</span></li>
-                                    <li className="flex items-start"><span className="text-accent-600 mr-2">•</span><span>Team Building</span></li>
-                                    <li className="flex items-start"><span className="text-accent-600 mr-2">•</span><span>Stress Management</span></li>
-                                    <li className="flex items-start"><span className="text-accent-600 mr-2">•</span><span>Social Networking</span></li>
-                                    <li className="flex items-start"><span className="text-accent-600 mr-2">•</span><span>Work-Life Balance</span></li>
+                                    <li className="flex items-start"><span className="text-accent-600 mr-2">&bull;</span><span>Personality Development</span></li>
+                                    <li className="flex items-start"><span className="text-accent-600 mr-2">&bull;</span><span>Leadership Skills</span></li>
+                                    <li className="flex items-start"><span className="text-accent-600 mr-2">&bull;</span><span>Team Building</span></li>
+                                    <li className="flex items-start"><span className="text-accent-600 mr-2">&bull;</span><span>Stress Management</span></li>
+                                    <li className="flex items-start"><span className="text-accent-600 mr-2">&bull;</span><span>Social Networking</span></li>
+                                    <li className="flex items-start"><span className="text-accent-600 mr-2">&bull;</span><span>Work-Life Balance</span></li>
                                 </ul>
                             </div>
                         </div>

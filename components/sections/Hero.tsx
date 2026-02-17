@@ -1,123 +1,172 @@
 "use client";
+
 import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 
 const Hero = () => {
     const [scrollY, setScrollY] = React.useState(0);
-    const [mousePosition, setMousePosition] = React.useState({ x: 0, y: 0 });
+    const [cursorOffset, setCursorOffset] = React.useState({ x: 0, y: 0 });
+    const [reducedMotion, setReducedMotion] = React.useState(false);
 
     React.useEffect(() => {
-        const handleScroll = () => {
-            setScrollY(window.scrollY);
-        };
+        const handleScroll = () => setScrollY(window.scrollY);
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
 
-        const handleMouseMove = (e: MouseEvent) => {
-            setMousePosition({
-                x: (e.clientX / window.innerWidth - 0.5) * 20, // max 20px shift
-                y: (e.clientY / window.innerHeight - 0.5) * 20
+    React.useEffect(() => {
+        const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+        const handlePreference = () => setReducedMotion(mediaQuery.matches);
+        handlePreference();
+
+        if (typeof mediaQuery.addEventListener === 'function') {
+            mediaQuery.addEventListener('change', handlePreference);
+            return () => mediaQuery.removeEventListener('change', handlePreference);
+        }
+
+        mediaQuery.addListener(handlePreference);
+        return () => mediaQuery.removeListener(handlePreference);
+    }, []);
+
+    React.useEffect(() => {
+        if (reducedMotion) {
+            setCursorOffset({ x: 0, y: 0 });
+            return;
+        }
+
+        let rafId = 0;
+        const handleMouseMove = (event: MouseEvent) => {
+            if (rafId) {
+                cancelAnimationFrame(rafId);
+            }
+            rafId = requestAnimationFrame(() => {
+                const x = (event.clientX / window.innerWidth - 0.5) * 8;
+                const y = (event.clientY / window.innerHeight - 0.5) * 8;
+                setCursorOffset({ x, y });
             });
         };
 
-        window.addEventListener('scroll', handleScroll, { passive: true });
-        window.addEventListener('mousemove', handleMouseMove);
-
+        window.addEventListener('mousemove', handleMouseMove, { passive: true });
         return () => {
-            window.removeEventListener('scroll', handleScroll);
+            if (rafId) {
+                cancelAnimationFrame(rafId);
+            }
             window.removeEventListener('mousemove', handleMouseMove);
         };
-    }, []);
+    }, [reducedMotion]);
 
     return (
-        <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-primary-dark -mt-20 pt-32 perspective-1000">
-            {/* Background with Parallax Effect */}
+        <section className="relative -mt-24 min-h-[calc(100vh-0.5rem)] w-full overflow-hidden bg-primary-dark pb-8 pt-24 md:pt-28">
+            <div className="absolute inset-0 bg-gradient-to-br from-primary-dark via-primary to-primary-600" />
             <div
-                className="absolute inset-0 z-0 will-change-transform"
+                className="absolute inset-0 bg-[url('/images/circuit-pattern.svg')] opacity-10"
+                style={{ transform: `translate3d(${cursorOffset.x * 0.28}px, ${cursorOffset.y * 0.28}px, 0)` }}
+            />
+            <div
+                className="absolute -left-24 top-24 h-64 w-64 rounded-full bg-accent/25 blur-[110px]"
                 style={{
-                    transform: `translateY(${scrollY * 0.5}px) scale(1.1)`,
+                    transform: `translate3d(${cursorOffset.x * 0.2}px, ${scrollY * 0.12 + cursorOffset.y * 0.2}px, 0)`,
                 }}
-            >
-                {/* Base Gradient Layer */}
-                <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary-600 to-primary-dark opacity-90 mix-blend-multiply" />
+            />
+            <div
+                className="absolute -right-24 bottom-6 h-72 w-72 rounded-full bg-white/12 blur-[120px]"
+                style={{
+                    transform: `translate3d(${cursorOffset.x * -0.18}px, ${-scrollY * 0.08 + cursorOffset.y * -0.2}px, 0)`,
+                }}
+            />
 
-                {/* Circuit Pattern with Mouse Parallax */}
-                <div
-                    className="absolute inset-0 bg-[url('/images/circuit-pattern.svg')] opacity-10 transition-transform duration-100 ease-out"
-                    style={{
-                        transform: `translate(${mousePosition.x * -1}px, ${mousePosition.y * -1}px)`
-                    }}
-                />
+            <div className="relative z-10 mx-auto w-full max-w-[1280px] px-4 sm:px-6">
+                <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-10">
+                    <div className="text-white">
+                        <span className="inline-flex rounded-full border border-white/35 bg-white/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-white/90">
+                            Institute of Engineering & Management
+                        </span>
+                        <h1 className="mt-5 text-4xl font-bold leading-tight font-heading md:text-5xl lg:text-6xl">
+                            Electronics & Communication Engineering
+                            <span className="block text-accent-light">Engineered for Impact</span>
+                        </h1>
+                        <p className="mt-5 max-w-2xl text-base text-primary-50 md:text-lg">
+                            A rigorous academic ecosystem that blends research, innovation, and industry exposure to prepare future-ready engineers.
+                        </p>
 
-                {/* Radial Glow Overlay for Depth */}
-                <div className="absolute inset-0 bg-radial-gradient from-accent/5 to-transparent opacity-60 pointer-events-none mix-blend-screen" />
-            </div>
-
-            {/* Hero Content */}
-            <div className="relative z-10 container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
-                <div className="text-white space-y-6 animate-fade-in-up">
-
-                    <h1 className="text-5xl md:text-7xl font-bold leading-snug font-heading bg-clip-text text-transparent bg-gradient-to-r from-white via-white to-gray-300 pb-2">
-                        Inspiring <span className="text-accent underline decoration-4 decoration-accent/30 underline-offset-8">Excellence</span> <br /> in Engineering
-                    </h1>
-                    <p className="text-lg md:text-xl text-gray-200 max-w-xl leading-relaxed">
-                        Welcome to the Department of Electronics & Communication Engineering at IEM Kolkata. Where innovation meets education to shape the leaders of tomorrow.
-                    </p>
-
-                    <div className="flex flex-wrap gap-4 pt-4">
-                        <Link
-                            href="/academics"
-                            className="px-8 py-4 bg-accent hover:bg-accent-600 text-primary-dark font-bold rounded-xl shadow-glow-accent transition-all transform hover:-translate-y-1 hover:shadow-2xl flex items-center"
-                        >
-                            Explore Programs
-                            <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-                        </Link>
-                        <Link
-                            href="/about"
-                            className="px-8 py-4 bg-white/5 hover:bg-white/10 backdrop-blur-md border border-white/20 text-white font-medium rounded-xl transition-all transform hover:-translate-y-1 hover:border-white/40"
-                        >
-                            Learn More
-                        </Link>
-                    </div>
-                </div>
-
-                {/* Hero Visual/Illustration */}
-                {/* Hero Visual/Illustration */}
-                <div className="hidden md:block relative animate-float delay-700">
-                    <div className="relative z-10 grid grid-cols-2 gap-4">
-                        <div className="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-                            <div className="h-12 w-12 rounded-full bg-accent flex items-center justify-center font-bold text-primary-dark text-xl mb-4">
-                                A+
-                            </div>
-                            <div className="text-white font-bold text-lg">NAAC Accredited</div>
-                            <div className="text-gray-300 text-sm">Grade A Department</div>
+                        <div className="mt-7 flex flex-wrap gap-4">
+                            <Link
+                                href="/academics"
+                                className="rounded-xl bg-gradient-to-r from-accent to-accent-600 px-7 py-3 font-semibold text-primary-dark shadow-lg transition-transform hover:-translate-y-0.5"
+                            >
+                                Explore Academics
+                            </Link>
+                            <Link
+                                href="/research"
+                                className="rounded-xl border border-white/40 bg-white/10 px-7 py-3 font-medium text-white backdrop-blur-sm transition-colors hover:bg-white/18"
+                            >
+                                View Research
+                            </Link>
                         </div>
-                        <div className="bg-primary/40 backdrop-blur-md border border-white/10 p-6 rounded-2xl mt-8 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
-                            <div className="flex items-center gap-3 mb-4">
-                                <div className="w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
-                                <div className="text-white font-bold text-sm">Live Research</div>
-                            </div>
-                            <div className="text-3xl font-bold text-white mb-1">20+</div>
-                            <div className="text-gray-300 text-sm">Ongoing Projects</div>
-                        </div>
-                        <div className="col-span-2 bg-gradient-to-r from-accent to-accent-600 p-6 rounded-2xl shadow-lg transform hover:-translate-y-1 transition-transform cursor-pointer animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
-                            <div className="flex justify-between items-center text-primary-dark">
-                                <div>
-                                    <div className="font-bold text-lg">Placement Record</div>
-                                    <div className="text-sm opacity-90">Consistent 90% above placement</div>
+
+                        <div className="mt-8 grid max-w-xl grid-cols-2 gap-3 text-sm sm:grid-cols-3">
+                            {[
+                                { label: 'Established', value: '1996' },
+                                { label: 'NBA Status', value: 'Accredited' },
+                                { label: 'Programs', value: 'UG + PG' }
+                            ].map((item) => (
+                                <div key={item.label} className="rounded-xl border border-white/20 bg-white/10 px-4 py-3 backdrop-blur-sm">
+                                    <div className="text-xs uppercase tracking-wide text-white/75">{item.label}</div>
+                                    <div className="mt-1 font-heading text-lg font-semibold">{item.value}</div>
                                 </div>
-                                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
+                            ))}
+                        </div>
+                    </div>
+
+                    <div className="relative">
+                        <div className="relative overflow-hidden rounded-3xl border border-white/30 bg-white/10 p-6 text-white shadow-2xl backdrop-blur-xl md:p-7">
+                            <div className="absolute -top-20 -right-20 h-52 w-52 rounded-full bg-accent/25 blur-3xl" />
+                            <div className="absolute -bottom-20 -left-20 h-56 w-56 rounded-full bg-white/12 blur-3xl" />
+
+                            <div className="relative z-10">
+                                <p className="text-xs uppercase tracking-[0.14em] text-white/75">Department Profile</p>
+                                <h3 className="mt-1 text-xl font-heading font-bold md:text-2xl">Academic Distinctions</h3>
+                                <p className="mt-3 text-sm text-white/80">
+                                    A concise snapshot of the department&apos;s standing and core academic identity.
+                                </p>
+
+                                <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                                    {[
+                                        { label: "Established", value: "1996" },
+                                        { label: "Accreditation", value: "NBA Accredited" },
+                                        { label: "Programs", value: "UG + PG" },
+                                        { label: "Institution", value: "IEM Kolkata" },
+                                        { label: "Curriculum", value: "Outcome-Based" },
+                                        { label: "Engagement", value: "Workshops & FDPs" },
+                                    ].map((item) => (
+                                        <div key={item.label} className="rounded-xl border border-white/20 bg-white/10 px-4 py-3">
+                                            <p className="text-[11px] uppercase tracking-wide text-white/70">{item.label}</p>
+                                            <p className="mt-1 text-sm font-semibold text-accent-light">{item.value}</p>
+                                        </div>
+                                    ))}
+                                </div>
+
+                                <div className="mt-4 flex flex-wrap gap-2">
+                                    {["Research Initiatives", "Student Chapters", "Industry Exposure"].map((item) => (
+                                        <span
+                                            key={item}
+                                            className="inline-flex items-center rounded-full border border-white/25 bg-white/10 px-3 py-1 text-[11px] font-medium text-white/90"
+                                        >
+                                            {item}
+                                        </span>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="mt-4 hidden justify-end md:flex">
+                            <div className="inline-flex items-center gap-2 rounded-xl border border-white/40 bg-black/20 px-3 py-2 text-sm font-semibold text-white">
+                                <span className="inline-block h-2 w-2 rounded-full bg-accent-light" />
+                                Flagship Milestone
+                                <span className="text-accent-light">NBA Accredited</span>
                             </div>
                         </div>
                     </div>
-                    {/* Decorative blurred blobs behind */}
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-accent/10 rounded-full blur-[100px] -z-10"></div>
-                </div>
-            </div>
-
-            {/* Scroll Down Indicator */}
-            <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
-                <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center p-1">
-                    <div className="w-1 h-2 bg-accent rounded-full animate-scroll"></div>
                 </div>
             </div>
         </section>

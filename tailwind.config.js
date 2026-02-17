@@ -8,23 +8,23 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        background: '#F8FAFC',
+        background: '#F4F7FB',
         surface: '#FFFFFF',
-        'surface-2': '#F1F5F9',
+        'surface-2': '#EEF3F9',
         text: '#0F172A',
-        'muted-text': '#475569',
-        border: '#E2E8F0',
+        'muted-text': '#4B5565',
+        border: '#D7E0EC',
         primary: {
-          DEFAULT: '#0B3A78', // Official Deep Blue
-          600: '#0A2F63',
-          50: '#EAF2FF',
-          dark: '#002147', // Even darker for footer/hero
+          DEFAULT: '#0F2B59',
+          600: '#0C2247',
+          50: '#E8EFFC',
+          dark: '#081A39',
         },
         accent: {
-          DEFAULT: '#F2B705', // Official Gold/Yellow
-          600: '#D99A00',
-          50: '#FFF6D9',
-          light: '#FFD700',
+          DEFAULT: '#C89A2B',
+          600: '#A97F20',
+          50: '#FAF2DF',
+          light: '#E0B84F',
         },
         success: '#16A34A',
         warning: '#F59E0B',
@@ -32,8 +32,8 @@ module.exports = {
         info: '#2563EB',
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-        heading: ['Poppins', 'Inter', 'system-ui', 'sans-serif'],
+        sans: ['Manrope', 'system-ui', 'sans-serif'],
+        heading: ['Sora', 'Manrope', 'system-ui', 'sans-serif'],
       },
       borderRadius: {
         card: '16px',
@@ -42,12 +42,12 @@ module.exports = {
         '3xl': '24px',
       },
       boxShadow: {
-        sm: '0 1px 2px rgba(15, 23, 42, 0.06)',
-        md: '0 6px 18px rgba(15, 23, 42, 0.10)',
-        lg: '0 12px 28px rgba(15, 23, 42, 0.12)',
+        sm: '0 1px 2px rgba(15, 23, 42, 0.05)',
+        md: '0 10px 30px rgba(15, 23, 42, 0.10)',
+        lg: '0 20px 45px rgba(15, 23, 42, 0.12)',
         xl: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
-        'glow-primary': '0 0 20px rgba(11, 58, 120, 0.3)',
-        'glow-accent': '0 0 20px rgba(242, 183, 5, 0.3)',
+        'glow-primary': '0 0 30px rgba(15, 43, 89, 0.3)',
+        'glow-accent': '0 0 30px rgba(200, 154, 43, 0.3)',
       },
       maxWidth: {
         content: '1200px',

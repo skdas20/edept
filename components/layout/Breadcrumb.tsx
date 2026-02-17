@@ -48,9 +48,9 @@ const Breadcrumb: React.FC<BreadcrumbProps> = ({ className }) => {
   return (
     <nav
       aria-label="Breadcrumb"
-      className={cn('py-4', className)}
+      className={cn('py-6', className)}
     >
-      <ol className="flex items-center space-x-2 text-sm">
+      <ol className="flex flex-wrap items-center gap-1.5 text-sm">
         {breadcrumbs.map((crumb, index) => {
           const isLast = index === breadcrumbs.length - 1;
           
@@ -58,7 +58,7 @@ const Breadcrumb: React.FC<BreadcrumbProps> = ({ className }) => {
             <li key={crumb.href} className="flex items-center">
               {index > 0 && (
                 <svg
-                  className="w-4 h-4 mx-2 text-muted-text"
+                  className="mx-1 h-4 w-4 text-muted-text/70"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -74,7 +74,7 @@ const Breadcrumb: React.FC<BreadcrumbProps> = ({ className }) => {
               )}
               {isLast ? (
                 <span
-                  className="text-text font-medium"
+                  className="rounded-full border border-border bg-white px-3 py-1 font-medium text-text"
                   aria-current="page"
                 >
                   {crumb.label}
@@ -82,7 +82,7 @@ const Breadcrumb: React.FC<BreadcrumbProps> = ({ className }) => {
               ) : (
                 <Link
                   href={crumb.href}
-                  className="text-muted-text hover:text-primary transition-colors"
+                  className="rounded-full px-3 py-1 text-muted-text transition-colors hover:bg-primary-50 hover:text-primary"
                 >
                   {crumb.label}
                 </Link>

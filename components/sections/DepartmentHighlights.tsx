@@ -1,6 +1,5 @@
 import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 
 const features = [
     {
@@ -43,31 +42,34 @@ const features = [
 
 const DepartmentHighlights = () => {
     return (
-        <section className="py-16 md:py-24 bg-surface relative overflow-hidden">
-            <div className="container mx-auto px-4">
-                <div className="text-center max-w-3xl mx-auto mb-16">
-                    <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4 text-primary">Why Choose EEE at IEM?</h2>
-                    <p className="text-muted-text text-lg">
+        <section className="relative overflow-hidden bg-surface py-16 md:py-24">
+            <div className="absolute left-0 top-14 h-44 w-44 rounded-full bg-accent/20 blur-3xl" />
+            <div className="absolute bottom-0 right-0 h-52 w-52 rounded-full bg-primary/10 blur-3xl" />
+
+            <div className="container relative mx-auto px-4">
+                <div className="mx-auto mb-16 max-w-3xl text-center">
+                    <h2 className="mb-4 text-3xl font-bold font-heading text-primary md:text-4xl">Why Choose ECE at IEM?</h2>
+                    <p className="text-lg text-muted-text">
                         We offer a blend of vigorous academic training and rich practical experience to prepare you for the challenges of the modern world.
                     </p>
                 </div>
 
-                <div className="grid md:grid-cols-3 gap-8">
+                <div className="grid gap-8 md:grid-cols-3">
                     {features.map((feature) => (
                         <div
                             key={feature.name}
-                            className="group relative bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-t border-gray-100 overflow-hidden"
+                            className="elevated-card group relative overflow-hidden rounded-3xl p-8 transition-all duration-300 hover:-translate-y-1.5"
                         >
-                            <div className={`absolute top-0 right-0 w-32 h-32 ${feature.color} rounded-bl-full opacity-50 group-hover:scale-110 transition-transform duration-500`}></div>
+                            <div className={`absolute right-0 top-0 h-28 w-28 ${feature.color} rounded-bl-full opacity-60 transition-transform duration-500 group-hover:scale-110`} />
 
-                            <div className={`inline-flex items-center justify-center p-3 rounded-2xl ${feature.color} mb-6 relative z-10`}>
+                            <div className={`relative z-10 mb-6 inline-flex items-center justify-center rounded-2xl p-3 ${feature.color}`}>
                                 {feature.icon}
                             </div>
 
-                            <h3 className="text-xl font-bold text-primary mb-3 relative z-10">{feature.name}</h3>
-                            <p className="text-muted-text mb-6 relative z-10">{feature.description}</p>
+                            <h3 className="relative z-10 mb-3 text-xl font-bold text-primary">{feature.name}</h3>
+                            <p className="relative z-10 mb-6 text-muted-text">{feature.description}</p>
 
-                            <Link href={feature.href} className="inline-flex items-center font-semibold text-primary group-hover:text-accent-600 transition-colors relative z-10">
+                            <Link href={feature.href} className="relative z-10 inline-flex items-center font-semibold text-primary transition-colors group-hover:text-accent-600">
                                 {feature.cta}
                                 <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
                             </Link>

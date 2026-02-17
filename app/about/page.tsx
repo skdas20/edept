@@ -1,6 +1,5 @@
 import React from 'react';
 import PageHeader from "@/components/layout/PageHeader";
-import Card from "@/components/ui/Card";
 import Image from "next/image";
 
 export default function About() {
@@ -17,7 +16,7 @@ export default function About() {
         name: "Prof. (Dr.) Malay Gangopadhyaya",
         designation: "Professor & Head",
         email: "malay.gangopadhyaya@iemcal.com",
-        image: "/images/hod-placeholder.jpg", // Placeholder
+        image: "/images/faculty/6f92a3e4ea097d0a1e52112fb61ff854.jpg",
         message: "The department emphasizes mentor-based education, practical laboratory work, and student participation in research projects spanning embedded systems, VLSI, DSP, and image processing. Our programs encourage publication in international journals and involvement in interdisciplinary activities. We are committed to developing competent professionals who contribute to engineering and technology advancement."
     };
 
@@ -47,7 +46,7 @@ export default function About() {
                             <h2 className="text-2xl font-bold font-heading text-primary">Our Vision</h2>
                         </div>
                         <p className="text-muted-text text-lg leading-relaxed italic">
-                            "{vision}"
+                            &ldquo;{vision}&rdquo;
                         </p>
                     </div>
 
@@ -76,17 +75,19 @@ export default function About() {
                 <div className="container mx-auto px-4">
                     <h2 className="text-3xl font-bold font-heading text-primary w-full text-center mb-12">Head of Department</h2>
                     <div className="max-w-4xl mx-auto bg-white rounded-3xl overflow-hidden shadow-xl flex flex-col md:flex-row">
-                        <div className="w-full md:w-1/3 bg-gray-200 relative min-h-[300px]">
-                            <div className="absolute inset-0 flex items-center justify-center text-gray-400">
-                                {/* Placeholder for HOD Image */}
-                                <svg className="w-24 h-24" fill="currentColor" viewBox="0 0 24 24"><path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
-                            </div>
+                        <div className="w-full md:w-1/3 relative min-h-[300px] bg-surface-2">
+                            <Image
+                                src={hod.image}
+                                alt={hod.name}
+                                fill
+                                className="object-cover object-top"
+                            />
                         </div>
                         <div className="w-full md:w-2/3 p-8 flex flex-col justify-center">
                             <h3 className="text-2xl font-bold text-primary mb-1">{hod.name}</h3>
                             <p className="text-accent-600 font-medium mb-4">{hod.designation}</p>
                             <p className="text-muted-text mb-6 italic leading-relaxed">
-                                "{hod.message}"
+                                &ldquo;{hod.message}&rdquo;
                             </p>
                             <div className="mt-auto">
                                 <a href={`mailto:${hod.email}`} className="text-primary hover:text-accent font-medium flex items-center gap-2 transition-colors">

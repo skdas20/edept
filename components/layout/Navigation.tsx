@@ -63,24 +63,26 @@ const Navigation: React.FC<NavigationProps> = ({ items, mobile = false, onItemCl
 
   if (mobile) {
     return (
-      <nav className="flex flex-col space-y-1" role="navigation" aria-label="Mobile navigation">
+      <nav className="flex flex-col gap-1.5" role="navigation" aria-label="Mobile navigation">
         {items.map((item) => (
           <div key={item.label}>
             {item.children && item.children.length > 0 ? (
               <div>
-                <div className={cn(
-                  'flex items-stretch rounded-lg overflow-hidden transition-colors',
-                  isActive(item.href)
-                    ? 'bg-primary-50'
-                    : 'hover:bg-gray-50'
-                )}>
+                <div
+                  className={cn(
+                    'flex items-stretch overflow-hidden rounded-xl border transition-colors',
+                    isActive(item.href)
+                      ? 'border-primary/20 bg-primary-50/80'
+                      : 'border-border/70 bg-white hover:border-primary/20 hover:bg-primary-50/50'
+                  )}
+                >
                   <Link
                     href={item.href}
                     onClick={handleLinkClick}
                     className={cn(
-                      'flex-1 px-4 py-3 text-left transition-colors',
+                      'flex-1 px-4 py-3.5 text-left text-sm transition-colors',
                       isActive(item.href)
-                        ? 'text-primary font-medium'
+                        ? 'font-semibold text-primary'
                         : 'text-text'
                     )}
                   >
@@ -89,10 +91,10 @@ const Navigation: React.FC<NavigationProps> = ({ items, mobile = false, onItemCl
                   <button
                     onClick={() => handleMobileToggle(item.label)}
                     className={cn(
-                      'px-3 py-3 transition-colors border-l',
+                      'border-l px-3 py-3 transition-colors',
                       isActive(item.href)
-                        ? 'text-primary border-primary-100'
-                        : 'text-text border-gray-200'
+                        ? 'border-primary/20 text-primary'
+                        : 'border-border text-text'
                     )}
                     aria-expanded={openMobileAccordion === item.label}
                     aria-label={`Toggle ${item.label} submenu`}
@@ -116,17 +118,17 @@ const Navigation: React.FC<NavigationProps> = ({ items, mobile = false, onItemCl
                   </button>
                 </div>
                 {openMobileAccordion === item.label && (
-                  <div className="ml-4 mt-1 space-y-1">
+                  <div className="ml-3 mt-2 space-y-1">
                     {item.children.map((child) => (
                       <Link
                         key={child.label}
                         href={child.href}
                         onClick={handleLinkClick}
                         className={cn(
-                          'block px-4 py-2 text-sm rounded-lg transition-colors',
+                          'block rounded-lg px-3 py-2 text-sm transition-colors',
                           isActive(child.href)
-                            ? 'bg-primary-50 text-primary font-medium'
-                            : 'text-muted-text hover:bg-gray-50 hover:text-text'
+                            ? 'bg-primary-50 text-primary'
+                            : 'text-muted-text hover:bg-primary-50/60 hover:text-text'
                         )}
                       >
                         {child.label}
@@ -140,10 +142,10 @@ const Navigation: React.FC<NavigationProps> = ({ items, mobile = false, onItemCl
                 href={item.href}
                 onClick={handleLinkClick}
                 className={cn(
-                  'block px-4 py-3 rounded-lg transition-colors',
+                  'block rounded-xl border px-4 py-3 text-sm transition-colors',
                   isActive(item.href)
-                    ? 'bg-primary-50 text-primary font-medium'
-                    : 'text-text hover:bg-gray-50'
+                    ? 'border-primary/20 bg-primary-50 text-primary'
+                    : 'border-border/70 bg-white text-text hover:border-primary/20 hover:bg-primary-50/50'
                 )}
               >
                 {item.label}
@@ -157,7 +159,7 @@ const Navigation: React.FC<NavigationProps> = ({ items, mobile = false, onItemCl
 
   // Desktop Navigation
   return (
-    <nav className="flex items-center space-x-1" role="navigation" aria-label="Main navigation">
+    <nav className="flex items-center gap-1" role="navigation" aria-label="Main navigation">
       {items.map((item) => (
         <div
           key={item.label}
@@ -170,10 +172,14 @@ const Navigation: React.FC<NavigationProps> = ({ items, mobile = false, onItemCl
               <Link
                 href={item.href}
                 className={cn(
-                  'px-4 py-2 rounded-lg text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2',
+                  'inline-flex items-center rounded-xl px-3.5 py-2 text-sm font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/50',
                   isActive(item.href)
-                    ? transparent ? 'text-accent bg-white/10' : 'text-primary bg-primary-50'
-                    : transparent ? 'text-white/90 hover:text-white hover:bg-white/10' : 'text-text hover:text-primary hover:bg-primary-50'
+                    ? transparent
+                      ? 'bg-white/14 text-accent-light'
+                      : 'bg-primary-50 text-primary'
+                    : transparent
+                      ? 'text-white/90 hover:bg-white/12 hover:text-white'
+                      : 'text-text hover:bg-primary-50/70 hover:text-primary'
                 )}
                 aria-expanded={openDropdown === item.label}
                 aria-haspopup="true"
@@ -200,7 +206,7 @@ const Navigation: React.FC<NavigationProps> = ({ items, mobile = false, onItemCl
               </Link>
               {openDropdown === item.label && (
                 <div
-                  className="absolute top-full left-0 mt-1 w-56 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50"
+                  className="absolute left-0 top-full z-50 mt-2 w-64 overflow-hidden rounded-xl border border-border bg-white shadow-lg"
                   role="menu"
                 >
                   {item.children.map((child) => (
@@ -209,10 +215,10 @@ const Navigation: React.FC<NavigationProps> = ({ items, mobile = false, onItemCl
                       href={child.href}
                       onClick={handleLinkClick}
                       className={cn(
-                        'block px-4 py-2 text-sm transition-colors',
+                        'block px-4 py-2.5 text-sm transition-colors',
                         isActive(child.href)
                           ? 'bg-primary-50 text-primary font-medium'
-                          : 'text-text hover:bg-gray-50 hover:text-primary'
+                          : 'text-text hover:bg-primary-50/70 hover:text-primary'
                       )}
                       role="menuitem"
                     >
@@ -227,11 +233,14 @@ const Navigation: React.FC<NavigationProps> = ({ items, mobile = false, onItemCl
               href={item.href}
               onClick={handleLinkClick}
               className={cn(
-                'block px-4 py-2 rounded-lg text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2',
-                'block px-4 py-2 rounded-lg text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2',
+                'block rounded-xl px-3.5 py-2 text-sm font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/50',
                 isActive(item.href)
-                  ? transparent ? 'text-accent bg-white/10' : 'text-primary bg-primary-50'
-                  : transparent ? 'text-white/90 hover:text-white hover:bg-white/10' : 'text-text hover:text-primary hover:bg-primary-50'
+                  ? transparent
+                    ? 'bg-white/14 text-accent-light'
+                    : 'bg-primary-50 text-primary'
+                  : transparent
+                    ? 'text-white/90 hover:bg-white/12 hover:text-white'
+                    : 'text-text hover:bg-primary-50/70 hover:text-primary'
               )}
             >
               {item.label}

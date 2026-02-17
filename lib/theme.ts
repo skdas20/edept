@@ -2,22 +2,22 @@
 export const theme = {
   colors: {
     // Core colors
-    background: '#F8FAFC',
+    background: '#F4F7FB',
     surface: '#FFFFFF',
-    surface2: '#F1F5F9',
+    surface2: '#EEF3F9',
     text: '#0F172A',
-    mutedText: '#475569',
-    border: '#E2E8F0',
+    mutedText: '#4B5565',
+    border: '#D7E0EC',
     
     // Brand colors
-    primary: '#0B3A78',
-    primary600: '#0A2F63',
-    primary50: '#EAF2FF',
+    primary: '#0F2B59',
+    primary600: '#0C2247',
+    primary50: '#E8EFFC',
     
     // Accent colors
-    accent: '#F2B705',
-    accent600: '#D99A00',
-    accent50: '#FFF6D9',
+    accent: '#C89A2B',
+    accent600: '#A97F20',
+    accent50: '#FAF2DF',
     
     // Status colors
     success: '#16A34A',
@@ -51,8 +51,8 @@ export const theme = {
   
   typography: {
     fontFamily: {
-      sans: ['Inter', 'system-ui', 'sans-serif'],
-      heading: ['Poppins', 'Inter', 'system-ui', 'sans-serif'],
+      sans: ['Manrope', 'system-ui', 'sans-serif'],
+      heading: ['Sora', 'Manrope', 'system-ui', 'sans-serif'],
     },
     fontSize: {
       h1: '44px',
