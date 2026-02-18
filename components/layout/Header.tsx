@@ -54,8 +54,8 @@ const Header: React.FC<HeaderProps> = ({ config, transparent: propTransparent })
             <Link href="/" className="group flex min-w-0 items-center gap-3">
               <div
                 className={cn(
-                  "logo-shine relative flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-xl border bg-gradient-to-br from-primary to-primary-600 shadow-md",
-                  showSolid ? "border-primary/20" : "border-white/40"
+                  "relative flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-xl border bg-white shadow-sm",
+                  showSolid ? "border-primary/20" : "border-white/70"
                 )}
               >
                 {config.logo ? (
@@ -64,7 +64,7 @@ const Header: React.FC<HeaderProps> = ({ config, transparent: propTransparent })
                     alt={`${config.department} Logo`}
                     width={48}
                     height={48}
-                    className="h-full w-full object-contain p-1"
+                    className="h-full w-full object-contain p-0.5"
                   />
                 ) : (
                   <span className="font-heading text-sm font-bold text-primary">

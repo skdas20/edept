@@ -12,7 +12,7 @@ export default function LoadingScreen() {
       <div className="absolute inset-0 bg-[url('/images/circuit-pattern.svg')] opacity-[0.07]" />
 
       <div className="relative z-10 flex flex-col items-center px-6">
-        <div className="logo-shine relative h-[84px] w-[84px] overflow-hidden rounded-2xl border border-accent/50 bg-gradient-to-br from-primary to-primary-600 p-2 shadow-[0_16px_36px_rgba(15,43,89,0.3)]">
+        <div className="relative h-[84px] w-[84px] overflow-hidden rounded-2xl border border-primary/20 bg-white p-2 shadow-[0_14px_28px_rgba(15,43,89,0.18)]">
           <Image
             src={siteConfig.logo}
             alt="IEM logo"

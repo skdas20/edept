@@ -4,7 +4,7 @@ export const siteConfig: SiteConfig = {
   siteName: "ECE Department - IEM",
   department: "Electronics & Communication Engineering",
   institution: "Institute of Engineering & Management",
-  logo: "/images/IEM_Logo-150x150.png",
+  logo: "/images/new.png",
   favicon: "/favicon.ico",
   colors: {
     primary: "#0F2B59",

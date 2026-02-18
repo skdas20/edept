@@ -56,7 +56,7 @@ const Hero = () => {
     }, [reducedMotion]);
 
     return (
-        <section className="relative -mt-24 min-h-[calc(100vh-0.5rem)] w-full overflow-hidden bg-primary-dark pb-8 pt-24 md:pt-28">
+        <section className="relative -mt-24 w-full overflow-hidden bg-primary-dark pb-6 pt-24 md:min-h-[calc(100vh-0.5rem)] md:pb-8 md:pt-28">
             <div className="absolute inset-0 bg-gradient-to-br from-primary-dark via-primary to-primary-600" />
             <div
                 className="absolute inset-0 bg-[url('/images/circuit-pattern.svg')] opacity-10"
@@ -76,7 +76,7 @@ const Hero = () => {
             />
 
             <div className="relative z-10 mx-auto w-full max-w-[1280px] px-4 sm:px-6">
-                <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-10">
+                <div className="grid items-center gap-6 lg:grid-cols-2 lg:gap-10">
                     <div className="text-white">
                         <span className="inline-flex rounded-full border border-white/35 bg-white/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-white/90">
                             Institute of Engineering & Management
@@ -104,18 +104,6 @@ const Hero = () => {
                             </Link>
                         </div>
 
-                        <div className="mt-8 grid max-w-xl grid-cols-2 gap-3 text-sm sm:grid-cols-3">
-                            {[
-                                { label: 'Established', value: '1996' },
-                                { label: 'NBA Status', value: 'Accredited' },
-                                { label: 'Programs', value: 'UG + PG' }
-                            ].map((item) => (
-                                <div key={item.label} className="rounded-xl border border-white/20 bg-white/10 px-4 py-3 backdrop-blur-sm">
-                                    <div className="text-xs uppercase tracking-wide text-white/75">{item.label}</div>
-                                    <div className="mt-1 font-heading text-lg font-semibold">{item.value}</div>
-                                </div>
-                            ))}
-                        </div>
                     </div>
 
                     <div className="relative">
