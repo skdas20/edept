@@ -19,6 +19,24 @@ export default function Notice() {
                         </div>
 
                         <div className="space-y-6">
+                            {/* IEEE AP-S Achievement */}
+                            <div className="bg-yellow-50 rounded-2xl p-6 border-l-4 border-yellow-500">
+                                <div className="flex items-start justify-between mb-3">
+                                    <span className="bg-yellow-500 text-white text-xs font-bold px-3 py-1 rounded-full">ACHIEVEMENT</span>
+                                    <span className="text-sm text-muted-text">April 2026</span>
+                                </div>
+                                <h3 className="text-xl font-bold text-primary mb-2">IEEE AP-S Undergraduate Summer Research Scholarship 2026</h3>
+                                <p className="text-muted-text mb-3">
+                                    <strong>Arjab Sengupta</strong> (Undergraduate Researcher, Dept. of ECE, IEM Kolkata) has been awarded the prestigious{" "}
+                                    <strong>IEEE Antennas &amp; Propagation Society Undergraduate Summer Research Scholarship (USRS) 2026</strong>,
+                                    carrying a grant of <strong>$3,000 USD</strong>. He is among only{" "}
+                                    <strong>30 undergraduates selected worldwide</strong> across IEEE Regions 1 through 10,
+                                    recognising exceptional promise in antennas, propagation, and electromagnetics research.
+                                    Mentored by <strong>Prof. Dr. Gobinda Sen</strong>, Faculty, Department of ECE, IEM Kolkata.
+                                </p>
+                                <span className="text-yellow-700 font-semibold">Heartfelt Congratulations, Arjab!</span>
+                            </div>
+
                             {/* Notice Item */}
                             <div className="bg-primary-50 rounded-2xl p-6 border-l-4 border-primary">
                                 <div className="flex items-start justify-between mb-3">
