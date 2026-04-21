@@ -1,4 +1,5 @@
 import PageHeader from "@/components/layout/PageHeader";
+import Image from "next/image";
 
 export default function Notice() {
     return (
@@ -21,19 +22,50 @@ export default function Notice() {
                         <div className="space-y-6">
                             {/* IEEE AP-S Achievement */}
                             <div className="bg-yellow-50 rounded-2xl p-6 border-l-4 border-yellow-500">
-                                <div className="flex items-start justify-between mb-3">
+                                <div className="flex items-start justify-between mb-4">
                                     <span className="bg-yellow-500 text-white text-xs font-bold px-3 py-1 rounded-full">ACHIEVEMENT</span>
                                     <span className="text-sm text-muted-text">April 2026</span>
                                 </div>
                                 <h3 className="text-xl font-bold text-primary mb-2">IEEE AP-S Undergraduate Summer Research Scholarship 2026</h3>
-                                <p className="text-muted-text mb-3">
+                                <p className="text-muted-text mb-5">
                                     <strong>Arjab Sengupta</strong> (Undergraduate Researcher, Dept. of ECE, IEM Kolkata) has been awarded the prestigious{" "}
                                     <strong>IEEE Antennas &amp; Propagation Society Undergraduate Summer Research Scholarship (USRS) 2026</strong>,
                                     carrying a grant of <strong>$3,000 USD</strong>. He is among only{" "}
                                     <strong>30 undergraduates selected worldwide</strong> across IEEE Regions 1 through 10,
                                     recognising exceptional promise in antennas, propagation, and electromagnetics research.
-                                    Mentored by <strong>Prof. Dr. Gobinda Sen</strong>, Faculty, Department of ECE, IEM Kolkata.
                                 </p>
+                                <div className="flex flex-wrap gap-6 mb-4">
+                                    <div className="flex items-center gap-3">
+                                        <div className="relative w-14 h-14 rounded-full overflow-hidden border-2 border-yellow-400 flex-shrink-0">
+                                            <Image
+                                                src="/images/achievements/arjab-sengupta.jpg"
+                                                alt="Arjab Sengupta"
+                                                fill
+                                                className="object-cover"
+                                            />
+                                        </div>
+                                        <div>
+                                            <p className="font-bold text-primary text-sm">Arjab Sengupta</p>
+                                            <p className="text-xs text-muted-text">Awardee · Undergraduate Researcher</p>
+                                            <p className="text-xs text-muted-text">Dept. of ECE, IEM Kolkata</p>
+                                        </div>
+                                    </div>
+                                    <div className="flex items-center gap-3">
+                                        <div className="relative w-14 h-14 rounded-full overflow-hidden border-2 border-yellow-400 flex-shrink-0">
+                                            <Image
+                                                src="/images/achievements/gobinda-sen.jpg"
+                                                alt="Prof. Dr. Gobinda Sen"
+                                                fill
+                                                className="object-cover"
+                                            />
+                                        </div>
+                                        <div>
+                                            <p className="font-bold text-primary text-sm">Prof. Dr. Gobinda Sen</p>
+                                            <p className="text-xs text-muted-text">Mentor · Faculty, Dept. of ECE</p>
+                                            <p className="text-xs text-muted-text">IEM Kolkata</p>
+                                        </div>
+                                    </div>
+                                </div>
                                 <span className="text-yellow-700 font-semibold">Heartfelt Congratulations, Arjab!</span>
                             </div>
 
