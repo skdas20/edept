@@ -4,21 +4,44 @@ import Image from "next/image";
 
 export default function Faculty() {
     const faculty = [
-        { name: "Prof. (Dr.) Malay Gangopadhyaya", designation: "Professor & Head", qualification: "Ph.D.", area: "Device, Circuit & System", image: "/images/faculty/6f92a3e4ea097d0a1e52112fb61ff854.jpg", email: "malay.gangopadhyaya@iemcal.com" },
-        { name: "Prof. Amit Kumar Das", designation: "Assistant Professor", qualification: "M.Tech", area: "Electronics & Communication", image: "/images/faculty/5dd71378c39fda5a440be54230b46939.jpg", email: "amit.das@iemcal.com" },
-        { name: "Prof. Soham Kanti Bishnu", designation: "Assistant Professor", qualification: "M.Tech", area: "Electronics & Communication", image: "/images/faculty/423f8b64236a81cf8fec514d11abcbf1.jpg", email: "soham.bishnu@iemcal.com" },
-        { name: "Prof. Subhamoy Ray", designation: "Assistant Professor", qualification: "M.Tech", area: "Electronics & Communication", image: "/images/faculty/62de3b485acea14063d5bef88d6c90b3.jpg", email: "subhamoy.ray@iemcal.com" },
-        { name: "Prof. Sutapa Ray (Adhikary)", designation: "Assistant Professor", qualification: "M.Tech", area: "Electronics & Communication", image: "/images/faculty/86489917f2fcdfb86d960042ba7844c5.jpg", email: "sutapa.ray@iemcal.com" },
-        { name: "Prof. Dr. Murari Shaw", designation: "Associate Professor", qualification: "Ph.D.", area: "Electronics & Communication", image: "/images/faculty/57eecc889683980f3a3e89c6dbe595bd.jpg", email: "murari.shaw@iemcal.com" },
-        { name: "Prof. Dr. Amitava Ghosh", designation: "Associate Professor", qualification: "Ph.D.", area: "Electronics & Communication", image: "/images/faculty/866b07b0f75a1d0b4be30100eb46eadd.jpg", email: "amitava.ghosh@iemcal.com" },
-        { name: "Prof. Debajyoti Sengupta", designation: "Assistant Professor", qualification: "M.Tech", area: "Electronics & Communication", image: "/images/faculty/0994c872bb749227ed970bbb245b6478.jpg", email: "debajyoti.sengupta@iemcal.com" },
-        { name: "Mr. Sanjay Chatterjee", designation: "Scientific Officer", qualification: "M.Tech", area: "Electronics & Communication", image: "/images/faculty/bc53e180cf224ec3cc04605989685991.jpg", email: "sanjay.chatterjee@iemcal.com" },
-        { name: "Prof. Dr. Monali Das", designation: "Assistant Professor", qualification: "Ph.D.", area: "Electronics & Communication", image: "/images/faculty/21bd5f41adb135b5d14b6f0e13a89dee.jpg", email: "monali.das@iemcal.com" },
-        { name: "Prof. Soham Ghosh", designation: "Associate Professor", qualification: "M.Tech", area: "Electronics & Communication", image: "/images/faculty/230b17d697e99ed799c7fa7de53d90e0.jpg", email: "soham.ghosh@iemcal.com" },
+        { name: "Prof. (Dr.) Malay Gangopadhyaya", designation: "Professor & Head", qualification: "Ph.D.", area: "Antenna Propagation", image: "/images/faculty/6f92a3e4ea097d0a1e52112fb61ff854.jpg", email: "malay.gangopadhyaya@iemcal.com" },
+        { name: "Prof. Dr. Ratna Chakrabarty", designation: "Professor & Assistant HOD", qualification: "Ph.D.", area: "Quantum Dot Cellular Automata", image: "/images/faculty/google-ratna-chakrabarty.png", email: "" },
+        { name: "Prof. Srijita Chakraborty", designation: "Asst. Professor & Assistant HOD", qualification: "M.Tech, Ph.D. (Reg.)", area: "Microstrip Patch Antenna, Microwave", image: "/images/faculty/google-srijita-chakraborty.png", email: "" },
+        { name: "Prof. Dr. Mili Sarkar", designation: "Professor", qualification: "Ph.D.", area: "VLSI, Circuit Theory, Digital Electronics", image: "/images/faculty/google-mili-sarkar.png", email: "" },
+        { name: "Prof. Dr. Engg. K. P. Ghatak", designation: "Sr. Professor & Research Director", qualification: "Ph.D.", area: "Nano-Science & Technology", image: "/images/faculty/google-kp-ghatak.png", email: "" },
+        { name: "Prof. Dr. G. S. Taki", designation: "Professor", qualification: "Ph.D.", area: "Materials Sc. & Nano-Technology", image: "/images/faculty/google-gs-taki.png", email: "" },
+        { name: "Prof. Dr. Saktipada Nanda", designation: "Professor", qualification: "Ph.D.", area: "Mathematics, Biomechanics", image: "/images/faculty/google-saktipada-nanda.png", email: "" },
+        { name: "Prof. Dr. Rijuparna Chakraborty", designation: "Professor", qualification: "Ph.D.", area: "Laser Beam Propagation, Fourier Optics", image: "/images/faculty/google-rijuparna-chakraborty.png", email: "" },
+        { name: "Prof. Dr. Tapan Rana", designation: "Assistant Professor", qualification: "Ph.D.", area: "Scintillation in Satellite Communication", image: "/images/faculty/google-tapan-rana.png", email: "" },
+        { name: "Prof. Gautam Ghosh", designation: "Assistant Professor", qualification: "M.Tech, Ph.D. (Reg.)", area: "Instrumentation, Power Electronics", image: "/images/faculty/google-gautam-ghosh.png", email: "" },
+        { name: "Prof. Indranil Basu", designation: "Assistant Professor", qualification: "M.Tech, M.S., Ph.D. (Pursuing)", area: "Machine Learning", image: "/images/faculty/google-indranil-basu.png", email: "" },
+        { name: "Prof. Dr. Rajib Ghosh", designation: "Professor", qualification: "Ph.D.", area: "Photonic Crystal, Opto-electronics", image: "/images/faculty/google-rajib-ghosh.png", email: "" },
+        { name: "Prof. Arindam Chakraborty", designation: "Assistant Professor", qualification: "M.Tech, Ph.D. (Reg.)", area: "Solid State Lighting", image: "/images/faculty/google-arindam-chakraborty.png", email: "" },
+        { name: "Prof. Debadyoti Ghosh", designation: "Assistant Professor", qualification: "M.Tech, Ph.D. (Pursuing)", area: "Renewable Energy", image: "/images/faculty/google-debadyoti-ghosh.png", email: "" },
+        { name: "Prof. Dr. Subhabrata Banerjee", designation: "Professor", qualification: "Ph.D.", area: "Soft Computation, ML, AI, Robotics", image: "/images/faculty/google-subhabrata-banerjee.png", email: "" },
+        { name: "Prof. Dr. Sutanu Ghosh", designation: "Professor", qualification: "M.Tech, Ph.D.", area: "RF Energy Harvesting, VLC, 5G", image: "/images/faculty/google-sutanu-ghosh.jpg", email: "" },
+        { name: "Prof. Dr. Rintu Kumar Gayen", designation: "Professor", qualification: "Ph.D.", area: "Biomedical Tech., Microwave Engineering", image: "/images/faculty/google-rintu-kumar-gayen.png", email: "" },
+        { name: "Prof. Arunava Mukhopadhyay", designation: "Assistant Professor", qualification: "M.Tech, Ph.D. (Reg.)", area: "Antenna & Propagation", image: "/images/faculty/google-arunava-mukhopadhyay.png", email: "" },
+        { name: "Prof. Soumik Kumar Kundu", designation: "Assistant Professor", qualification: "M.Tech, Ph.D. (Reg.)", area: "Materials Sc. & Nano-Technology", image: "/images/faculty/google-soumik-kumar-kundu.png", email: "" },
+        { name: "Prof. Samit Karmakar", designation: "Assistant Professor", qualification: "M.Tech, Ph.D. (Reg.)", area: "Nano-Technology, Graphene", image: "/images/faculty/google-samit-karmakar.png", email: "" },
+        { name: "Prof. Dr. Indranil Maity", designation: "Associate Professor", qualification: "Ph.D.", area: "Graphene, 2D Nanomaterials, Gas Sensor", image: "/images/faculty/google-indranil-maity.png", email: "" },
+        { name: "Prof. Dr. Gobinda Sen", designation: "Professor", qualification: "M.Tech, Ph.D.", area: "Microwave Absorbers", image: "/images/faculty/google-gobinda-sen.jpg", email: "" },
+        { name: "Prof. Dr. Arindam Deb", designation: "Associate Professor", qualification: "Ph.D.", area: "Soft Computing, RF and Microwave", image: "/images/faculty/google-arindam-deb.png", email: "" },
+        { name: "Prof. Dr. Sayan Sarkar", designation: "Associate Professor", qualification: "Ph.D.", area: "SAR, GPR, Antenna, Radar", image: "/images/faculty/google-sayan-sarkar.png", email: "" },
+        { name: "Prof. Amit Kumar Das", designation: "Assistant Professor", qualification: "M.Tech", area: "Machine Learning, IoT, Industry 4.0", image: "/images/faculty/5dd71378c39fda5a440be54230b46939.jpg", email: "amit.das@iemcal.com" },
+        { name: "Prof. Soham Kanti Bishnu", designation: "Assistant Professor", qualification: "M.Tech", area: "Antenna, Optical Sensors", image: "/images/faculty/423f8b64236a81cf8fec514d11abcbf1.jpg", email: "soham.bishnu@iemcal.com" },
+        { name: "Prof. Subhamoy Ray", designation: "Assistant Professor", qualification: "B.Tech", area: "Mechatronics", image: "/images/faculty/62de3b485acea14063d5bef88d6c90b3.jpg", email: "subhamoy.ray@iemcal.com" },
+        { name: "Prof. Sutapa Ray (Adhikary)", designation: "Assistant Professor", qualification: "M.Tech, Ph.D. (Pursuing)", area: "Antenna, MCSA", image: "/images/faculty/86489917f2fcdfb86d960042ba7844c5.jpg", email: "sutapa.ray@iemcal.com" },
+        { name: "Prof. Dr. Murari Shaw", designation: "Associate Professor", qualification: "Ph.D.", area: "Microstrip Patch Antenna", image: "/images/faculty/57eecc889683980f3a3e89c6dbe595bd.jpg", email: "murari.shaw@iemcal.com" },
+        { name: "Prof. Dr. Amitava Ghosh", designation: "Associate Professor", qualification: "Ph.D.", area: "VLSI Architecture & Circuit Design", image: "/images/faculty/866b07b0f75a1d0b4be30100eb46eadd.jpg", email: "amitava.ghosh@iemcal.com" },
+        { name: "Prof. Debajyoti Sengupta", designation: "Assistant Professor", qualification: "M.Tech", area: "AI / ML, Computer Science", image: "/images/faculty/0994c872bb749227ed970bbb245b6478.jpg", email: "debajyoti.sengupta@iemcal.com" },
+        { name: "Mr. Sanjay Chatterjee", designation: "Scientific Officer", qualification: "B.Tech, M.Sc.", area: "Electronics & Communication", image: "/images/faculty/bc53e180cf224ec3cc04605989685991.jpg", email: "sanjay.chatterjee@iemcal.com" },
+        { name: "Prof. Dr. Monali Das", designation: "Assistant Professor", qualification: "Ph.D.", area: "Semiring theory, Monoids", image: "/images/faculty/21bd5f41adb135b5d14b6f0e13a89dee.jpg", email: "monali.das@iemcal.com" },
+        { name: "Prof. Soham Ghosh", designation: "Associate Professor", qualification: "Ph.D. (Submitted)", area: "Implantable Antenna, WBAN, THz Antenna", image: "/images/faculty/230b17d697e99ed799c7fa7de53d90e0.jpg", email: "soham.ghosh@iemcal.com" },
         { name: "Mr. Sayantan Talukdar", designation: "Technical Assistant", qualification: "B.Tech", area: "Electronics & Communication", image: "/images/faculty/f4b09ea3fc113353f552dfbe97324db2.jpg", email: "sayantan.talukdar@iemcal.com" },
-        { name: "Mrs. Aparna Biswas", designation: "Scientific Officer", qualification: "M.Tech", area: "Electronics & Communication", image: "/images/faculty/2a214fb5ceb98f93e4fbcf23a50c0724.jpg", email: "aparna.biswas@iemcal.com" },
-        { name: "Mr. Mohidur Rahaman", designation: "Technical Assistant", qualification: "B.Tech", area: "Electronics & Communication", image: "/images/faculty/f91414946f6eb2c8c18290319052aa8c.jpg", email: "mohidur.rahaman@iemcal.com" },
-        { name: "Mr. Gurudas Bardhan", designation: "Scientific Officer", qualification: "M.Tech", area: "Electronics & Communication", image: "/images/faculty/12a492ac2201d27b0cbb484993c1433b.jpg", email: "gurudas.bardhan@iemcal.com" },
+        { name: "Mrs. Aparna Biswas", designation: "Scientific Officer", qualification: "B.Sc.", area: "Electronics & Communication", image: "/images/faculty/2a214fb5ceb98f93e4fbcf23a50c0724.jpg", email: "aparna.biswas@iemcal.com" },
+        { name: "Mr. Mohidur Rahaman", designation: "Technical Assistant", qualification: "B.Sc.", area: "Electronics & Communication", image: "/images/faculty/f91414946f6eb2c8c18290319052aa8c.jpg", email: "mohidur.rahaman@iemcal.com" },
+        { name: "Mr. Gurudas Bardhan", designation: "Scientific Officer", qualification: "B.Sc.", area: "Electronics & Communication", image: "/images/faculty/12a492ac2201d27b0cbb484993c1433b.jpg", email: "gurudas.bardhan@iemcal.com" },
     ];
 
     return (
@@ -89,15 +112,21 @@ export default function Faculty() {
                                     </div>
 
                                     <div className="mt-auto pt-4">
-                                        <a
-                                            href={`mailto:${fac.email}`}
-                                            className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#0F2B59] via-[#174a89] to-[#C89A2B] px-4 py-2.5 text-sm font-semibold text-white shadow-md transition-transform hover:-translate-y-0.5"
-                                        >
-                                            <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                                            </svg>
-                                            Send Email
-                                        </a>
+                                        {fac.email ? (
+                                            <a
+                                                href={`mailto:${fac.email}`}
+                                                className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#0F2B59] via-[#174a89] to-[#C89A2B] px-4 py-2.5 text-sm font-semibold text-white shadow-md transition-transform hover:-translate-y-0.5"
+                                            >
+                                                <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                                </svg>
+                                                Send Email
+                                            </a>
+                                        ) : (
+                                            <div className="inline-flex w-full items-center justify-center rounded-full border border-[#d8deea] px-4 py-2.5 text-xs font-medium text-[#6b7280]">
+                                                Contact via Department Office
+                                            </div>
+                                        )}
                                     </div>
                                 </div>
                             </div>
